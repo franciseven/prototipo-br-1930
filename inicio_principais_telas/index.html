@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="titulo">BR 1930 (Início)</title>
+</head>
+
+<body>
+  <header>
+    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+    </a>
+    <nav>
+      <a href="./sobre.html" data-i18n="sobre">Sobre</a>
+      <a href="./politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+      <a href="./instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+      <a href="./login.html" data-i18n="usuario">Usuário</a>
+      <a href="./contato.html" data-i18n="contato">Contato</a>
+      <a href="./manual.html" data-i18n="manual">Manual</a>
+      <select id="language-selector">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-images">
+      <img src="./capa_inicio/joao_pessoa.jpeg" alt="Imagem 1" data-desc="Retrato de João Pessoa">
+      <img src="./capa_inicio/rebeldes_princesa.jpeg" alt="Imagem 2" data-desc="Movimento de 30 - Rebeldes em Princesa/PB">
+      <img src="./capa_inicio/visita_presidente_revolucionario.jpeg" alt="Imagem 3" data-desc="Visita do presidente revolucionário do norte do Brasil">
+      <img src="./capa_inicio/sepultura_tenente_genesio.jpg" alt="Imagem 4" data-desc="Movimento de 30 - Sepultura do Tenente Genésio e os Companheiros - Água Branca/PB.">
+    </div>
+  </section>
+
+  <h1 data-i18n="titulo" class="hero-title">BR 1930 - A Caminho do Centenário</h1>
+
+  <section class="search-section">
+    <div class="caixa-pesquisa-geral">
+      <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" data-i18n-placeholder="placeholder" />
+      <button onclick="pesquisar()" data-i18n="pesquisa_btn">Pesquisar</button>
+    </div>
+  </section>
+
+  <section class="browse-section">
+    <a href="../colecoes_telas/audios.html" class="browse-box"><h3>Áudios</h3><p>Gravações sobre os acontecimentos históricos ocorridos na década de 1930.</p></a>
+    <a href="../colecoes_telas/dissertacoes_e_teses.html" class="browse-box"><h3>Dissertações e Teses</h3><p>Informações sobre a década de 1930 através de dissertações e teses.</p></a>
+    <a href="../colecoes_telas/documentos.html" class="browse-box"><h3>Documentos</h3><p>Documentos textuais sobre a trajetória de José Américo de Almeida no ano de 1930.</p></a>
+    <a href="../colecoes_telas/entrevistas.html" class="browse-box"><h3>Entrevistas</h3><p>Entrevistas de personagens e pesquisadores da década de 1930.</p></a>
+    <a href="../colecoes_telas/imagens.html" class="browse-box"><h3>Imagens</h3><p>Registros visuais sobre eventos sucedidos no descênio de 1930.</p></a>
+    <a href="../colecoes_telas/livros.html" class="browse-box move"><h3>Livros</h3><p>Livros relacionados à década de 1930.</p></a>
+    <a href="../colecoes_telas/periodicos.html" class="browse-box move"><h3>Periódicos</h3><p>Revistas e matérias jornalísticas sobre a década de 1930.</p></a>
+    <a href="../colecoes_telas/territorio_isabel.html" class="browse-box move"><h3>Território Livre de Princesa Isabel</h3><p>Documentos relativos ao Coronel José Pereira Lima e a "Revolta de Princesa"</p></a>
+    <a href="../colecoes_telas/videos.html" class="browse-box move"><h3>Vídeos</h3><p>Registros audiovisuais sobre a década de 1930.</p></a>
+  </section>
+
+  <div id="popup-colab">
+    <div class="popup-content">
+      <button class="close-btn" onclick="document.getElementById('popup-colab').style.display='none'">x</button>
+      <p id="popup-text">Quer colaborar com a plataforma? Faça login para aproveitar novas funcionalidades como o envio de arquivos. Caso queira ajudar ainda mais, preencha o nosso formulário!</p>
+      <a href="https://forms/exemplo" target="_blank" id="popup-link">Acesse o formulário aqui</a>
+    </div>
+  </div>
+
+  <footer class="footer-section">
+    <div class="BR-1930-logo"><span data-i18n="footer.logo">BR 1930</span></div>
+    <p data-i18n="footer.database">Base de Dados</p>
+    <p data-i18n="footer.rights">Todos os Direitos Reservados</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank"><img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo"></a>
+      <a href="https://fcja.pb.gov.br/" target="_blank"><img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo"></a>
+      <a href="https://fapesq.rpp.br/" target="_blank"><img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo"></a>
+      <a href="https://www.ufpb.br/" target="_blank"><img src="../icones/ufpb__logo.png" alt="UFPB Logo"></a>
+      <a href="https://www.ifpb.edu.br/" target="_blank"><img src="../icones/ifpb_logo.png" alt="IFPB Logo"></a>
+      <a href="https://codata.pb.gov.br/" target="_blank"><img src="../icones/codata_logo.png" alt="CODATA Logo"></a>
+      <a href="https://dspace.lyrasis.org/" target="_blank"><img src="../icones/dspace_logo-removebg-preview.png" alt="DSpace Logo"></a>
+    </div>
+    <div class="footer-links">
+      <a href="link da conta no instagram" target="_blank"><img src="../icones/instagram.png" alt="Instagram" style="height: 20px;"></a>
+      <a href="link do canal" target="_blank"><img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;"></a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("language-selector").addEventListener("change", function () {
+      const lang = this.value;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (translations[lang][key]) {
+          el.placeholder = translations[lang][key];
+        }
+      });
+      document.getElementById("popup-text").textContent = translations[lang].popup_text;
+      document.getElementById("popup-link").textContent = translations[lang].formulario_link;
+    });
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('popup-colab').style.display = 'block';
+      }, 2000);
+    });
+
+    function pesquisar() {
+      const termo = document.getElementById("pesquisaGeral").value.trim();
+      if (termo !== "") {
+        window.location.href = "../colecoes_telas/busca_principal.html";
+      }
+    }
+
+    const heroImages = document.querySelectorAll('.hero-images img');
+
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    document.body.appendChild(tooltip);
+
+    heroImages.forEach(img => {
+      img.addEventListener('mousemove', e => {
+        tooltip.style.opacity = '1';
+        tooltip.textContent = img.getAttribute('data-desc');
+        const offsetX = 15;
+        const offsetY = 15;
+        tooltip.style.left = (e.pageX + offsetX) + 'px';
+        tooltip.style.top = (e.pageY + offsetY) + 'px';
+      });
+      img.addEventListener('mouseleave', () => {
+        tooltip.style.opacity = '0';
+      });
+    });
+  </script>
+
+
+</body>
+</html>
+
+
+  <style>
+    :root {
+      --primary: #31c4f3;
+      --accent: #0077cc;
+      --secondary: #e87474e9;
+      --hover-gray: #e0e0e0;
+      --text-dark: #222;
+      --text-light: #fff;
+      --radius: 6px;
+      --transition: 0.3s ease;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background-color: #fff;
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2vh 4vw;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5vw;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: clamp(0.9rem, 1vw, 1.1rem);
+      font-weight: 500;
+    }
+
+    #language-selector {
+      padding: 8px 14px;
+      font-size: 1rem;
+      border: 3px solid #000;
+      border-radius: var(--radius);
+      cursor: pointer;
+      min-width: 160px;
+    }
+
+    .hero {
+      background-color: #eaeaea;
+      height: 42vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-images {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .hero-images img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: rgba(0,0,0,0.75);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+      z-index: 10;
+    }
+
+    .hero-title {
+      text-align: center;
+      margin: 20px 0 40px 0;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      color: #111;
+    }
+
+    .search-section {
+      padding: 40px 20px;
+      background-color: #fafafa;
+      text-align: center;
+    }
+
+    .caixa-pesquisa-geral {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .caixa-pesquisa-geral input {
+      flex: 1 1 250px;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid #ccc;
+    }
+
+    .caixa-pesquisa-geral button {
+      padding: 12px 20px;
+      background-color: var(--primary);
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .browse-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      padding: 50px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      background-color: #f8f8f8;
+    }
+
+    .browse-box {
+      background-color: #f0f0f0;
+      padding: 22px;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .browse-box:hover {
+      background-color: var(--hover-gray);
+      transform: translateY(-4px);
+    }
+
+    .browse-box.move {
+      transform: translateX(130px);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .browse-box.move:hover {
+      transform: translateX(130px) translateY(-4px);
+      background-color: var(--hover-gray);
+    }
+
+    .footer-section {
+      background-color: #e87474e9;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #e87474e9;
+      color: white;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+    }
+
+    .footer-bottom .left-logos img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .footer-section .footer-links a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    #popup-colab {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 15px 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      z-index: 1000;
+      font-family: 'Georgia', serif;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    #popup-colab .popup-content {
+      position: relative;
+    }
+
+    #popup-colab p {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    #popup-colab a {
+      text-decoration: none;
+      background-color: #31c4f3;
+      color: #000;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    #popup-colab .close-btn {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #f44336;
+      color: rgb(255, 255, 255);
+      border: none;
+      font-size: 16px;
+      border-radius: 50%;
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      line-height: 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    a > button {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>

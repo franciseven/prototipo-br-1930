@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="titulo">BR 1930 - Contato</title>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+    </a>
+
+    <nav>
+      <a href="./sobre.html" data-i18n="sobre">Sobre</a>
+      <a href="./politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+      <a href="./instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+      <a href="./login.html" data-i18n="usuario">Usuário</a>
+      <a href="./contato.html" data-i18n="contato">Contato</a>
+      <a href="./manual.html" data-i18n="manual">Manual</a>
+
+      <select id="language-selector">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </nav>
+    
+  </header>
+
+  <div class="container">
+    <div class="contact-form">
+      <h2 data-i18n="entre_contato">Entre em contato</h2>
+      <form>
+        <input type="text" placeholder="Digite o seu nome" data-i18n-placeholder="nome" required />
+        <input type="email" placeholder="Digite o seu e-mail" data-i18n-placeholder="email" required />
+        <input type="text" placeholder="Digite a sua cidade" data-i18n-placeholder="cidade" />
+        <input type="text" placeholder="Digite o seu estado" data-i18n-placeholder="estado" />
+        <input type="text" placeholder="Digite o seu país" data-i18n-placeholder="pais" />
+
+        <select id="assunto" required>
+          <option value="" disabled selected data-i18n="selecione_assunto">Selecione o assunto</option>
+          <option value="parceria" data-i18n="fazer_parceria">Fazer Parceria</option>
+          <option value="duvida" data-i18n="duvida">Dúvida</option>
+          <option value="sugestao" data-i18n="sugestao">Sugestão</option>
+          <option value="elogio" data-i18n="elogio">Elogio</option>
+          <option value="reclamacao" data-i18n="reclamacao">Reclamação</option>
+          <option value="outro" data-i18n="outro_assunto">Outro Assunto</option>
+        </select>
+
+        <input type="text" id="outro-assunto" placeholder="Digite o seu assunto" data-i18n-placeholder="digite_assunto" style="display:none;" />
+
+        <textarea placeholder="Digite a sua mensagem" data-i18n-placeholder="mensagem"></textarea>
+        <button type="submit" data-i18n="enviar">Enviar</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h3 data-i18n="contato">Contato</h3>
+      <p><strong>Projeto BR 1930</strong></p>
+      <p>Email: projetobr1930@gmail.com</p>
+
+      <div class="social-media">
+        <a href="#" target="_blank">
+          <img src="../icones/facebook.png" alt="Facebook">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../icones/twitter.png" alt="Twitter">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../icones/instagram.png" alt="Instagram">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../icones/youtube.png" alt="YouTube">
+        </a>
+      </div>
+
+      <br><br>
+
+      <p><strong>Fundação Casa de José Américo</strong></p>
+      <p>Governo do Estado da Paraíba</p>
+      <p data-i18n="endereco">Endereço: Av. Cabo Branco, 3336 - Cabo Branco, João Pessoa - PB, 58045-010</p>
+      <p>Email: exemplo@gmail.com</p>
+
+      <div class="social-media">
+        <a href="#" target="_blank">
+          <img src="../icones/facebook.png" alt="Facebook">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../icones/twitter.png" alt="Twitter">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../icones/instagram.png" alt="Instagram">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../icones/youtube.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-section">
+    <div class="ufmg-logo"><span>BR 1930</span></div>
+    <p data-i18n="base_dados">Base de Dados</p>
+    <p data-i18n="direitos_reservados">Todos os Direitos Reservados</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank"><img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo"></a>
+      <a href="https://fcja.pb.gov.br/" target="_blank"><img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo"></a>
+      <a href="https://fapesq.rpp.br/" target="_blank"><img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo"></a>
+      <a href="https://www.ufpb.br/" target="_blank"><img src="../icones/ufpb__logo.png" alt="UFPB Logo"></a>
+      <a href="https://www.ifpb.edu.br/" target="_blank"><img src="../icones/ifpb_logo.png" alt="IFPB Logo"></a>
+      <a href="https://codata.pb.gov.br/" target="_blank"><img src="../icones/codata_logo.png" alt="CODATA Logo"></a>
+      <a href="https://dspace.lyrasis.org/" target="_blank"><img src="../icones/dspace_logo-removebg-preview.png" alt="DSpace Logo"></a>
+    </div>
+    <div class="footer-links">
+      <a href="link da conta no instagram" target="_blank"><img src="../icones/instagram.png" alt="Instagram" style="height: 20px;"></a>
+      <a href="link do canal" target="_blank"><img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;"></a>
+    </div>
+  </div>
+
+  
+  <script>
+    const selectAssunto = document.getElementById('assunto');
+    const outroAssuntoInput = document.getElementById('outro-assunto');
+
+    selectAssunto.addEventListener('change', function () {
+      if (this.value === 'outro') {
+        outroAssuntoInput.style.display = 'block';
+        outroAssuntoInput.setAttribute('required', 'required');
+      } else {
+        outroAssuntoInput.style.display = 'none';
+        outroAssuntoInput.removeAttribute('required');
+      }
+    });
+
+    function translatePage(language) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[language][key]) {
+          el.textContent = translations[language][key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if(translations[language][key]) {
+          el.placeholder = translations[language][key];
+        }
+      });
+
+      const title = document.querySelector('title[data-i18n]');
+      if(title) {
+        const key = title.getAttribute('data-i18n');
+        if(translations[language][key]) {
+          title.textContent = translations[language][key];
+        }
+      }
+    }
+
+    document.getElementById('language-selector').addEventListener('change', (event) => {
+      translatePage(event.target.value);
+    });
+
+    translatePage('pt');
+  </script>
+
+</body>
+</html>
+
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Georgia', serif;
+      color: var(--text-dark);
+      background-color: #fff;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 2vh 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #000;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2vw;
+      position: relative;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #language-selector {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border: 3px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 6px;
+      cursor: pointer;
+      min-width: 160px;
+      outline-offset: 3px;
+    }
+
+    .container {
+      padding: 50px 80px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      gap: 50px;
+      flex: 1;
+    }
+
+    .contact-form {
+      flex: 1;
+    }
+
+    .contact-form h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+    }
+
+    .contact-form textarea {
+      height: 150px;
+    }
+
+    .contact-form button {
+      background-color: #008C9E;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1.1rem;
+    }
+
+    .contact-form button:hover {
+      background-color: #007a8a;
+    }
+
+    .contact-info {
+      flex: 1;
+      margin-top: 5px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+
+    .social-media {
+      margin-top: 10px;
+    }
+
+    .social-media a img {
+      height: 28px;
+      width: 28px;
+      margin-right: 10px;
+      vertical-align: middle;
+      transition: transform 0.2s;
+    }
+
+    .social-media a img:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-section {
+      background-color: #e87474e9;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #e87474e9;
+      color: white;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+    }
+
+    .footer-bottom .left-logos img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .footer-section .footer-links a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    a > button {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>

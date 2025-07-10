@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Mensagem de Redefinição de Senha</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+    </a>
+
+    <nav>
+      <a href="../inicio_principais_telas/sobre.html" data-i18n="sobre">Sobre</a>
+      <a href="../inicio_principais_telas/politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+      <a href="../inicio_principais_telas/instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+      <a href="../inicio_principais_telas/login.html" data-i18n="usuario">Usuário</a>
+      <a href="../inicio_principais_telas/contato.html" data-i18n="contato">Contato</a>
+      <a href="../inicio_principais_telas/manual.html" data-i18n="contato">Manual</a>
+      
+      <select id="language-selector">
+        <option value="pt-BR">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </nav>
+
+  </header>
+
+  <div class="main-content">
+    <main class="container">
+      <section class="section">
+        <h2>Redefinição de Senha</h2>
+        <p style="font-size: 1.3rem; max-width: 800px;">
+          Link de redefinição de senha enviado para o seu e-mail. Por favor, acesse o link e redefina a sua senha.
+          Por precaução, não esqueça de verificar a sua caixa de spam.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer-section">
+    <div class="ufmg-logo"><span>BR 1930</span></div>
+    <p>Base de Dados</p>
+    <p>Todos os Direitos Reservados</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank">
+        <img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo">
+      </a>
+      <a href="https://fcja.pb.gov.br/" target="_blank">
+        <img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo">
+      </a>
+      <a href="https://fapesq.rpp.br/" target="_blank">
+        <img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo">
+      </a>
+      <a href="https://www.ufpb.br/" target="_blank">
+        <img src="../icones/ufpb__logo.png" alt="UFPB Logo">
+      </a>
+      <a href="https://www.ifpb.edu.br/" target="_blank">
+        <img src="../icones/ifpb_logo.png" alt="IFPB Logo">
+      </a>
+      <a href="https://codata.pb.gov.br/" target="_blank">
+        <img src="../icones/codata_logo.png" alt="CODATA Logo">
+      </a>
+      <a href="https://dspace.lyrasis.org/" target="_blank">
+        <img src="../icones/dspace_logo-removebg-preview.png" alt="DSpace Logo">
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="link da conta no instagram" target="_blank">
+        <img src="../icones/instagram.png" alt="Instagram" style="height: 20px;">
+      </a>
+      <a href="link do canal" target="_blank">
+        <img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;">
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+  <style>
+    :root {
+      --primary: #e87474e9;
+      --primary-hover: #d15d5d;
+      --text-dark: #222;
+      --text-light: #fff;
+      --border-color: #ccc;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Georgia', serif;
+      color: var(--text-dark);
+      background-color: #fff;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 2vh 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #000;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2vw;
+      position: relative;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #language-selector {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border: 3px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 6px;
+      cursor: pointer;
+      min-width: 160px;
+      outline-offset: 3px;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .footer-section {
+      background-color: var(--primary);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: var(--primary);
+      color: white;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+      margin-top: auto;
+    }
+
+    .footer-bottom .left-logos img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .footer-section .footer-links a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    a > button {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>

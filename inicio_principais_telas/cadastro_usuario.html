@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="titulo">BR 1930 - Cadastro de Usuário</title>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+    </a>
+
+    <nav>
+      <a href="./sobre.html" data-i18n="sobre">Sobre</a>
+      <a href="./politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+      <a href="./instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+      <a href="./login.html" data-i18n="usuario">Usuário</a>
+      <a href="./contato.html" data-i18n="contato">Contato</a>
+      <a href="./manual.html" data-i18n="contato">Manual</a>
+
+      <select id="language-selector" class="language-selector">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </nav>
+    
+  </header>
+
+  <main class="login-container">
+    <div class="login-box">
+      <h2 data-i18n="cadastro_usuario">Cadastro de Usuário</h2>
+      <form id="cadastro-form">
+        <label for="instituicao-select" class="custom-label" data-i18n="instituicao">Instituição</label>
+        <select id="instituicao-select" name="instituicao-select" required>
+          <option value="" disabled selected data-i18n="selecione_instituicao">Selecione sua instituição</option>
+          <option value="Outra" data-i18n="outra_instituicao_option">Outra Instituição</option>
+          <option value="UFPB" data-i18n="ufpb">Universidade Federal da Paraíba (UFPB)</option>
+          <option value="UFMG" data-i18n="ufmg">Universidade Federal de Minas Gerais (UFMG)</option>
+          <option value="USP" data-i18n="usp">Universidade de São Paulo (USP)</option>
+          <option value="IFPB" data-i18n="ifpb">Instituto Federal da Paraíba (IFPB)</option>
+          <option value="FCJA" data-i18n="fcja">Fundação Casa de José Américo (FCJA)</option>
+          <option value="SEM_VINCULO" data-i18n="sem_vinculo">Instituição não vinculado(a)</option>
+        </select>
+        <input type="text" id="outra-instituicao" name="outra-instituicao" placeholder="Digite o nome da instituição" style="display:none; margin-top: 0.5em;">
+
+        <input type="text" placeholder="Nome Completo" data-i18n-placeholder="nome_completo" required>
+
+        <label for="formacao" class="custom-label" data-i18n="formacao">Formação</label>
+        <select id="formacao" name="formacao" required>
+          <option value="" disabled selected data-i18n="selecione_formacao">Selecione sua formação</option>
+          <option value="Ensino Médio" data-i18n="ensino_medio">Ensino Médio</option>
+          <option value="Graduação" data-i18n="graduacao">Graduação</option>
+          <option value="Especializacao" data-i18n="especializacao">Especialização</option>
+          <option value="Mestrado" data-i18n="mestrado">Mestrado</option>
+          <option value="Doutorado" data-i18n="doutorado">Doutorado</option>
+          <option value="Pos_Doutorado" data-i18n="pos_doutorado">Pós-Doutorado</option>
+        </select>
+
+        <label for="estado" class="custom-label" data-i18n="estado">Estado</label>
+        <select id="estado" name="estado" required>
+          <option value="" disabled selected data-i18n="selecione_estado">Selecione seu estado</option>
+          <option value="Paraiba" data-i18n="paraiba">Paraíba</option>
+          <option value="Minas Gerais" data-i18n="minas_gerais">Minas Gerais</option>
+          <option value="Rio Grande do Sul" data-i18n="rio_grande_do_sul">Rio Grande do Sul</option>
+          <option value="Outra Cidade" data-i18n="outra_cidade_option">Outra Cidade</option>
+        </select>
+        <input type="text" id="outra-cidade" name="outra-cidade" placeholder="Digite o nome da cidade" style="display:none; margin-top: 0.5em;">
+
+        <input type="email" placeholder="E-mail" data-i18n-placeholder="email" required>
+        <input type="password" placeholder="Senha" data-i18n-placeholder="senha" required>
+
+        <!--RETIRAR A TRANSIÇÃO DIRETA NO SCRIPT QUANDO FOR INTEGRAR COM O BACK-END-->
+        <button type="submit" class="login-btn" data-i18n="cadastrar_btn">CADASTRAR</button>
+      </form>
+
+      <div class="login-links">
+        <a href="../inicio_principais_telas/login.html" data-i18n="ja_tenho_conta">Já tenho conta</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-section">
+    <div class="ufmg-logo"><span>BR 1930</span></div>
+    <p data-i18n="base_de_dados">Base de Dados</p>
+    <p data-i18n="todos_direitos">Todos os Direitos Reservados</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank"><img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo"></a>
+      <a href="https://fcja.pb.gov.br/" target="_blank"><img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo"></a>
+      <a href="https://fapesq.rpp.br/" target="_blank"><img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo"></a>
+      <a href="https://www.ufpb.br/" target="_blank"><img src="../icones/ufpb__logo.png" alt="UFPB Logo"></a>
+      <a href="https://www.ifpb.edu.br/" target="_blank"><img src="../icones/ifpb_logo.png" alt="IFPB Logo"></a>
+      <a href="https://codata.pb.gov.br/" target="_blank"><img src="../icones/codata_logo.png" alt="CODATA Logo"></a>
+      <a href="https://dspace.lyrasis.org/" target="_blank"><img src="../icones/dspace_logo-removebg-preview.png" alt="DSpace Logo"></a>
+    </div>
+    <div class="footer-links">
+      <a href="link da conta no instagram" target="_blank"><img src="../icones/instagram.png" alt="Instagram" style="height: 20px;"></a>
+      <a href="link do canal" target="_blank"><img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;"></a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      function translatePage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute('placeholder', translations[lang][key]);
+        }
+      });
+
+      if (translations[lang] && translations[lang].titulo) {
+        document.title = translations[lang].titulo;
+      }
+    }
+
+    document.getElementById('language-selector').addEventListener('change', function () {
+      const selectedLang = this.value;
+      translatePage(selectedLang);
+    });
+
+    function toggleOutraInput(selectId, outraInputId, valorOutra) {
+      const selectElem = document.getElementById(selectId);
+      const inputOutra = document.getElementById(outraInputId);
+
+      selectElem.addEventListener('change', function () {
+        if (this.value === valorOutra) {
+          inputOutra.style.display = 'block';
+          inputOutra.required = true;
+        } else {
+          inputOutra.style.display = 'none';
+          inputOutra.value = '';
+          inputOutra.required = false;
+        }
+      });
+    }
+      
+    toggleOutraInput('instituicao-select', 'outra-instituicao', 'Outra');
+    toggleOutraInput('cidade', 'outra-cidade', 'Outra Cidade');
+
+    });
+
+    document.getElementById('cadastro-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (this.checkValidity()) {
+        window.location.href = "../inicio_principais_telas/termos_uso.html";
+      } else {
+        this.reportValidity();
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+  <style>
+    :root {
+      --primary: #3aa693;
+      --text-dark: #222;
+      --text-light: #fff;
+      --border-color: #ccc;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Georgia', serif;
+      color: var(--text-dark);
+      background-color: #fff;
+      line-height: 1.6;
+      font-size: clamp(14px, 1.1vw, 18px);
+    }
+
+    main.login-container {
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: clamp(20px, 5vh, 60px) clamp(20px, 5vw, 60px);
+      background-color: #f5f5f5;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 2vh 4vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: clamp(20px, 2vw, 32px);
+      color: #000;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5vw;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: clamp(12px, 1vw, 18px);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #language-selector {
+      font-family: 'Georgia', serif;
+      font-size: clamp(12px, 1vw, 16px);
+      padding: 0.5em 1em;
+      border: 2px solid #000;
+      background-color: #fff;
+      color: #000;
+      border-radius: 6px;
+      cursor: pointer;
+      min-width: 140px;
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 85vh;
+      background-color: #f5f5f5;
+      padding: 5vh 5vw;
+      box-sizing: border-box;
+    }
+
+    .login-box {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 4vh 4vw;
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 720px;
+      box-sizing: border-box;
+    }
+
+    .login-box h2 {
+      font-size: clamp(20px, 2vw, 28px);
+      color: #333;
+      margin-bottom: 3vh;
+      text-align: center;
+    }
+
+    .login-box form input,
+    .login-box form select {
+      width: 100%;
+      padding: clamp(12px, 1.5vh, 18px);
+      margin: clamp(10px, 1vh, 16px) 0;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      font-size: clamp(14px, 1vw, 18px);
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    .custom-label {
+      display: block;
+      margin-top: 1.5vh;
+      margin-bottom: 0.8vh;
+      font-weight: bold;
+      font-size: clamp(14px, 1vw, 18px);
+      color: #555;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: clamp(12px, 1.5vh, 18px);
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: clamp(14px, 1.2vw, 20px);
+      cursor: pointer;
+      margin-top: 2vh;
+      font-weight: bold;
+      box-sizing: border-box;
+    }
+
+    .login-btn:hover {
+      background-color: #2b8778;
+    }
+
+    .login-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 2vh;
+      font-size: clamp(12px, 1vw, 16px);
+      gap: 1vw;
+    }
+
+    .login-links a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .login-links a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-section {
+      background-color: #e87474e9;
+      color: white;
+      padding: clamp(15px, 2vh, 30px);
+      text-align: center;
+      font-size: clamp(12px, 1vw, 16px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: clamp(10px, 2vh, 20px) clamp(20px, 4vw, 40px);
+      background-color: #e87474e9;
+      flex-wrap: wrap;
+      font-size: clamp(12px, 1vw, 16px);
+    }
+
+    .footer-bottom .left-logos img {
+      height: clamp(24px, 4vh, 40px);
+      margin-right: clamp(8px, 1vw, 15px);
+    }
+
+    .footer-links a img {
+      height: clamp(14px, 2vh, 22px);
+    }
+
+    a > button, a {
+      text-decoration: none;
+    }
+  </style>

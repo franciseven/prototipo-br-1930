@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Configurações de Usuário</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+    </a>
+
+    <nav>
+      <a href="../inicio_principais_telas/sobre.html" data-i18n="sobre">Sobre</a>
+      <a href="../inicio_principais_telas/politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+      <a href="../inicio_principais_telas/instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+      <a href="../inicio_principais_telas/login.html" data-i18n="usuario">Usuário</a>
+      <a href="../inicio_principais_telas/contato.html" data-i18n="contato">Contato</a>
+      <a href="../inicio_principais_telas/manual.html" data-i18n="contato">Manual</a>
+      
+      <select id="language-selector">
+        <option value="pt-BR">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </nav>
+
+  </header>
+
+  <div class="main-content">
+    <section class="section">
+      <h2>Informações Pessoais de Usuário</h2>
+      <form>
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo"><br><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com"><br><br>
+        
+        <label for="instituicao" data-i18n="instituicao">Instituição</label><br>
+        <select id="instituicao" name="instituicao" class="form-control" required>
+          <option value="" disabled selected data-i18n="selecione_instituicao">Selecione sua instituição</option>
+          <option value="UFPB" data-i18n="ufpb">Universidade Federal da Paraíba (UFPB)</option>
+          <option value="UFMG" data-i18n="ufmg">Universidade Federal de Minas Gerais (UFMG)</option>
+          <option value="USP" data-i18n="usp">Universidade de São Paulo (USP)</option>
+          <option value="IFPB" data-i18n="ifpb">Instituto Federal da Paraíba (IFPB)</option>
+          <option value="FCJA" data-i18n="fcja">Fundação Casa de José Américo (FCJA)</option>
+          <option value="Outra" data-i18n="outra_instituicao_option">Outra Instituição</option>
+        </select><br>
+        <input type="text" id="outra-instituicao" name="outra-instituicao" placeholder="Digite o nome da instituição" style="display: none; margin-top: 0.5em;"><br>
+        
+        <br><label for="formacao" data-i18n="formacao">Formação</label><br>
+        <select id="formacao" name="formacao" class="form-control" required>
+          <option value="" disabled selected data-i18n="selecione_formacao">Selecione sua formação</option>
+          <option value="Ensino Médio" data-i18n="ensino_medio">Ensino Médio</option>
+          <option value="Graduação" data-i18n="graduacao">Graduação</option>
+          <option value="Pós-Graduação" data-i18n="pos_graduacao">Pós-Graduação</option>
+          <option value="Mestrado" data-i18n="mestrado">Mestrado</option>
+          <option value="Doutorado" data-i18n="doutorado">Doutorado</option>
+        </select><br><br>
+
+        <br><label for="dataNascimento">Data de Nascimento:</label><br>
+        <input type="date" id="dataNascimento" name="dataNascimento"><br><br>
+
+        <button type="submit">Salvar Informações</button>
+      </form>
+    </section>
+
+      <section class="section">
+        <h2>Foto de Perfil</h2>
+        <form>
+          <label for="fotoPerfil">Enviar nova foto:</label><br>
+          <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*"><br><br>
+          <button type="submit">Atualizar Foto</button>
+        </form>
+      </section>
+
+      <section class="section">
+        <h2>Alterar Senha</h2>
+        <form>
+          <label for="senhaAtual">Senha Atual:</label><br>
+          <input type="password" id="senhaAtual" name="senhaAtual"><br><br>
+
+          <label for="novaSenha">Nova Senha:</label><br>
+          <input type="password" id="novaSenha" name="novaSenha"><br><br>
+
+          <label for="confirmarSenha">Confirmar Nova Senha:</label><br>
+          <input type="password" id="confirmarSenha" name="confirmarSenha"><br><br>
+
+          <button type="submit">Alterar Senha</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer-section">
+    <div class="ufmg-logo"><span>BR 1930</span></div>
+    <p>Base de Dados</p>
+    <p>Todos os Direitos Reservados</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank">
+        <img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo">
+      </a>
+      <a href="https://fcja.pb.gov.br/" target="_blank">
+        <img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo">
+      </a>
+      <a href="https://fapesq.rpp.br/" target="_blank">
+        <img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo">
+      </a>
+      <a href="https://www.ufpb.br/" target="_blank">
+        <img src="../icones/ufpb__logo.png" alt="UFPB Logo">
+      </a>
+      <a href="https://www.ifpb.edu.br/" target="_blank">
+        <img src="../icones/ifpb_logo.png" alt="IFPB Logo">
+      </a>
+      <a href="https://codata.pb.gov.br/" target="_blank">
+        <img src="../icones/codata_logo.png" alt="CODATA Logo">
+      </a>
+      <a href="https://dspace.lyrasis.org/" target="_blank">
+        <img src="../icones/dspace_logo-removebg-preview.png" alt="DSpace Logo">
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="link da conta no instagram" target="_blank">
+        <img src="../icones/instagram.png" alt="Instagram" style="height: 20px;">
+      </a>
+      <a href="link do canal" target="_blank">
+        <img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;">
+      </a>
+    </div>
+  </div>
+
+  <div id="popup-confirmado">
+    Alteração Realizada!
+  </div>
+
+  <script>
+    document.getElementById('instituicao').addEventListener('change', function () {
+      const inputOutra = document.getElementById('outra-instituicao');
+      if (this.value === 'Outra') {
+        inputOutra.style.display = 'block';
+      } else {
+        inputOutra.style.display = 'none';
+      }
+    });
+
+    function isAnyFieldFilled(form) {
+      const inputs = form.querySelectorAll("input");
+      for (const input of inputs) {
+        if (
+          input.type !== "submit" &&
+          input.type !== "button" &&
+          input.value.trim() !== ""
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function showPopup() {
+      const popup = document.getElementById("popup-confirmado");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000);
+    }
+
+    document.querySelectorAll("form").forEach((form) => {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formId = form.closest("section").querySelector("h2")?.innerText || "";
+
+        if (formId.includes("Senha")) {
+          const senhaAtual = form.querySelector("#senhaAtual").value.trim();
+          const novaSenha = form.querySelector("#novaSenha").value.trim();
+          const confirmarSenha = form.querySelector("#confirmarSenha").value.trim();
+
+          if (!senhaAtual || !novaSenha || !confirmarSenha) {
+            alert("Por favor, preencha todos os campos de senha.");
+            return;
+          }
+
+          if (novaSenha !== confirmarSenha) {
+            alert("A nova senha e a confirmação de nova senha devem ser iguais.");
+            return;
+          }
+
+          const confirmed = confirm("Você tem certeza que deseja confirmar a alteração?");
+          if (confirmed) {
+            showPopup();
+            setTimeout(() => {
+              form.submit();
+            }, 2000);
+          }
+
+          return;
+        }
+
+        if (isAnyFieldFilled(form)) {
+          const confirmed = confirm("Você tem certeza que deseja confirmar a alteração?");
+          if (confirmed) {
+            showPopup();
+            setTimeout(() => {
+              form.submit();
+            }, 2000);
+          }
+        }
+      });
+    });
+  </script>
+
+
+</body>
+</html>
+
+  <style>
+    :root {
+      --primary: #e87474e9;
+      --primary-hover: #d15d5d;
+      --text-dark: #222;
+      --text-light: #fff;
+      --border-color: #ccc;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Georgia', serif;
+      color: var(--text-dark);
+      background-color: #fff;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 2vh 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #000;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2vw;
+      position: relative;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #language-selector {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border: 3px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 6px;
+      cursor: pointer;
+      min-width: 160px;
+      outline-offset: 3px;
+    }
+
+    .container {
+      padding: 50px 80px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .main-content {
+      margin: auto;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #000;
+      font-family: 'Georgia', serif;
+      box-sizing: border-box;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="password"],
+    input[type="file"] {
+      width: 100%;
+      padding: 14px;
+      margin-top: 6px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+      font-size: 1.05rem;
+    }
+
+    button {
+      background-color: var(--primary);
+      color: white;
+      padding: 14px 22px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    form {
+      max-width: 600px;
+      margin-top: 30px;
+    }
+
+    #popup-confirmado {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      font-size: 18px;
+      z-index: 1000;
+      text-align: center;
+    }
+
+    .footer-section {
+      background-color: #e87474e9;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #e87474e9;
+      color: white;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+    }
+
+    .footer-bottom .left-logos img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .footer-section .footer-links a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+    
+    a > button {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>

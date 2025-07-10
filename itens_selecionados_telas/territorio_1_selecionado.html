@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="titulo">BR 1930 - Documento do Território de Princesa Isabel Selecionado</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+    </a>
+
+    <nav>
+      <a href="../inicio_principais_telas/sobre.html" data-i18n="sobre">Sobre</a>
+      <a href="../inicio_principais_telas/politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+      <a href="../inicio_principais_telas/instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+      <a href="../inicio_principais_telas/login.html" data-i18n="usuario">Usuário</a>
+      <a href="../inicio_principais_telas/contato.html" data-i18n="contato">Contato</a>
+      <a href="../inicio_principais_telas/manual.html" data-i18n="contato">Manual</a>
+      
+      <select id="language-selector">
+        <option value="pt-BR">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </nav>
+
+  </header>
+
+  <div class="main-content">
+
+    <div class="document-header">
+      <h1 data-i18n="titulo_item">Como se combate o cangaceirismo na Parahyba</h1>
+    </div>
+
+    <div class="document-section">
+
+      <div class="left-column">
+        <img src="../capas_colecoes/territorios/capa_territorio_1.jpg" alt="Documento PDF" class="cover-image">
+        <a href="https://link" download data-i18n="baixar" class="download-link">Acessar Arquivo</a>
+        <p><strong data-i18n="data">Data</strong><br><span data-i18n="data_valor">02/06/1926</span></p>
+        <p><strong data-i18n="autor">Autor(a)</strong><br><span data-i18n="autor_valor">Jornal A Manhã (RJ)</span></p>
+      </div>
+
+      <div class="right-column">
+        <h3 data-i18n="resumo">Resumo</h3>
+        <p data-i18n="resumo_texto">Entrevista com Chico Pereira.</p>
+
+        <h3 data-i18n="palavra_chave">Palavras-chave</h3>
+        <div class="tags">
+          <div class="tag" data-i18n="tipo_documento">Território de Princesa Isabel</div>
+          <div class="tag" data-i18n="tipo_documento">Chico Pereira</div>
+          <div class="tag" data-i18n="tipo_documento">Cangaceirismo</div>
+          <div class="tag" data-i18n="tipo_documento">Parahyba</div>
+          <div class="tag" data-i18n="tipo_documento">Matéria Jornalística</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="overlay">
+    <div class="overlay-content">
+      <img id="overlay-image" src="../capas_colecoes/territorios/capa_territorio_1.jpg" alt="Capa do Arquivo">
+      <p class="overlay-warning">
+        Arquivo protegido por direitos autorais. Qualquer uso sem autorização levará a pessoa a ser julgada de acordo com as leis cabíveis.
+      </p>
+      <div class="overlay-buttons">
+        <a href="caminho/do/arquivo.pdf" download>Acessar Agora</a>
+        <button class="close-overlay">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-section">
+    <div class="ufmg-logo"><span data-i18n="footer.logo">BR 1930</span></div>
+    <p data-i18n="footer.database">Base de Dados</p>
+    <p data-i18n="footer.rights">Todos os Direitos Reservados</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank"><img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo"></a>
+      <a href="https://fcja.pb.gov.br/" target="_blank"><img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo"></a>
+      <a href="https://fapesq.rpp.br/" target="_blank"><img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo"></a>
+      <a href="https://www.ufpb.br/" target="_blank"><img src="../icones/ufpb__logo.png" alt="UFPB Logo"></a>
+      <a href="https://www.ifpb.edu.br/" target="_blank"><img src="../icones/ifpb_logo.png" alt="IFPB Logo"></a>
+      <a href="https://codata.pb.gov.br/" target="_blank"><img src="../icones/codata_logo.png" alt="CODATA Logo"></a>
+      <a href="https://dspace.lyrasis.org/" target="_blank"><img src="../icones/dspace_logo-removebg-preview.png" alt="DSpace Logo"></a>
+    </div>
+    <div class="footer-links">
+      <a href="link da conta no instagram" target="_blank"><img src="../icones/instagram.png" alt="Instagram" style="height: 20px;"></a>
+      <a href="link do canal" target="_blank"><img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;"></a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.download-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('overlay').style.display = 'flex';
+    });
+
+    document.querySelector('.close-overlay').addEventListener('click', function () {
+      document.getElementById('overlay').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
+
+  <style>
+    :root {
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --border-radius: 16px; 
+      --primary: #5a7391;
+      --secondary: #0000EE;
+      --background: #fafafa;
+      --text-primary: #2b2b2b;
+      --text-secondary: #555;
+      --border-color: #d0d4db;
+      --tag-bg: #e1e7f0;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Georgia', serif;
+      color: var(--text-primary);
+      background-color: var(--background);
+      line-height: 1.6;
+      font-size: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 2vh 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #000;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2vw;
+      position: relative;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #language-selector {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border: 3px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 6px;
+      cursor: pointer;
+      min-width: 160px;
+      outline-offset: 3px;
+    }
+
+    .container {
+      padding: 50px 80px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .main-content {
+      flex: 1;
+      max-width: 95vw;
+      margin: 2vh auto;
+      padding: 0 3vw;
+      box-sizing: border-box;
+    }
+
+    .document-header h1 {
+      font-size: 2rem;
+      color: var(--text-primary);
+      margin: 3vh 0 2vh 0;
+      text-align: center;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    .document-section {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 3vw;
+      align-items: stretch;
+      max-height: 550px;
+    }
+
+    .left-column,
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--container-bg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 2rem;
+      max-height: 500px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #ccc transparent;
+    }
+
+    .left-column {
+      flex: 1;
+      min-width: 20vw;
+      max-width: 25vw;
+      align-items: flex-start;
+    }
+
+    .left-column .cover-image {
+      width: 100%;
+      max-width: 160px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(90, 115, 145, 0.15);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .left-column a {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      transition: color 0.3s ease;
+    }
+
+    .left-column a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .left-column .download-link {
+      text-align: center;
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .right-column {
+      flex: 2;
+      min-width: 40vw;
+      max-width: 60vw;
+      color: var(--text-secondary);
+      max-height: none !important;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #ccc transparent;
+    }
+
+    .right-column h3 {
+      margin-top: 2vh;
+      font-size: 1.3rem;
+      color: var(--primary);
+      text-align: left;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.7rem;
+    }
+
+    .right-column p {
+      margin: 1vh 0;
+      font-size: 1rem;
+      text-align: justify;
+      line-height: 1.7;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1vh;
+    }
+
+    .tag {
+      background-color: var(--tag-bg);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin: 5px 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      user-select: none;
+      cursor: default;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .tag:hover {
+      background-color: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    .footer-section {
+      background-color: #e87474e9;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #e87474e9;
+      color: white;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+    }
+
+    .footer-bottom .left-logos img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .footer-section .footer-links a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    a > button {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(10, 10, 10, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      padding: 2vh;
+    }
+
+    .overlay-content {
+      text-align: center;
+      max-width: 100%;
+      position: relative;
+    }
+
+    #overlay-image {
+      max-width: 90vw;
+      max-height: 70vh;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+
+    .overlay-warning {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: #fff;
+      font-size: 1.4rem;
+      background-color: rgba(255, 0, 0, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 100%;
+    }
+
+    .overlay-buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .overlay-buttons button, .overlay-buttons a {
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .overlay-buttons button:hover,
+    .overlay-buttons a:hover {
+      background-color: #ddd;
+    }
+  </style>

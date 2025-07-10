@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Perfil de Administrador</title>
+</head>
+
+<body>
+
+  <header>
+    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+    </a>
+
+    <nav>
+      <a href="../inicio_principais_telas/sobre.html" data-i18n="nav.sobre">Sobre</a>
+      <a href="../inicio_principais_telas/politica_privacidade.html" data-i18n="nav.politica">Política de Privacidade</a>
+      <a href="../inicio_principais_telas/instituicoes_parceiras.html" data-i18n="nav.parceiras">Instituições Parceiras</a>
+      <a href="../inicio_principais_telas/login.html" data-i18n="nav.usuario">Usuário</a>
+      <a href="../inicio_principais_telas/contato.html" data-i18n="nav.contato">Contato</a>
+      <a href="../inicio_principais_telas/manual.html" data-i18n="nav.manual">Manual</a>
+      
+      <select id="language-selector">
+        <option value="pt-BR">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </nav>
+
+  </header>
+
+  <div class="container">
+
+    <div class="user-profile">
+      <div class="user-header">
+        <img src="../perfil_imagens/administrador_perfil.png" alt="Foto do Administrador" class="profile-photo" />
+        <div class="user-info">
+          <h2>Carlos Oliveira da Silva</h2>
+          <p data-i18n="user.institution">Instituto Federal de Educação da Paraíba</p>
+          <p>carlos_oliveria@gmail.com</p>
+          <p data-i18n="user.formacao">Doutorado</p>
+          <p data-i18n="user.cidade">João Pessoa</p>
+          
+          <div class="user-actions">
+            <a href="./configuracoes_admin.html">
+              <button data-i18n="configuracoes">Configurações</button>
+            </a>
+
+            <a href="../inicio_principais_telas/login.html">
+              <button data-i18n="sair">Sair</button>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="user-stats cards">
+        <div class="card">
+          <h3 data-i18n="stats.totalContributions">Contribuições Totais</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="stats.approvedContributions">Contribuições Aprovadas</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="stats.rejectedContributions">Contribuições Rejeitadas</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="stats.pendingContributions">Contribuições em Análise</h3>
+          <p>X</p>
+        </div>
+      </div>
+
+      <div class="last-access">
+        <strong data-i18n="lastAccess.label">Último Acesso:</strong> <span data-i18n="lastAccess.date">01/06/2025</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="generalStats.title">Estatísticas Gerais</h2>
+      <div class="cards">
+        <div class="card">
+          <h3 data-i18n="generalStats.userSubmissions">Submissões de Usuários</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="generalStats.adminSubmissions">Submissões de Admins</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="generalStats.siteAccess">Acessos ao Site</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="generalStats.downloads">Downloads</h3>
+          <p>X</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="contentSubmission.title">Submissão de Conteúdo</h2>
+
+      <div class="upload-area">
+        <label for="titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
+        <input type="text" id="titulo" name="titulo" required /><br /><br />
+
+        <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
+        <div id="author-input-group">
+          <input type="text" id="autorInput" placeholder="Digite o nome do autor" />
+          <button type="button" id="addAuthorBtn">Adicionar autor</button>
+        </div>
+        <ul id="authorsList" style="margin-top: 10px; list-style: disc inside;"></ul><br />
+
+        <label data-i18n="contentSubmission.metadataLabel">Metadados:</label><br />
+        <div class="checkbox-group" id="metadados-checkboxes">
+          <label><input type="checkbox" name="metadados" value="audio"> Áudio</label>
+          <label><input type="checkbox" name="metadados" value="tese"> Dissertação/Tese</label>
+          <label><input type="checkbox" name="metadados" value="documento"> Documento</label>
+          <label><input type="checkbox" name="metadados" value="entrevista"> Entrevista</label>
+          <label><input type="checkbox" name="metadados" value="imagem"> Imagem</label>
+          <label><input type="checkbox" name="metadados" value="livro"> Livro</label>
+          <label><input type="checkbox" name="metadados" value="periodico"> Periódico</label>
+          <label><input type="checkbox" name="metadados" value="video"> Vídeo</label>
+          <label><input type="checkbox" name="metadados" value="terriorio"> Território de Princesa Isabel</label>
+        </div><br />
+
+        <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
+          <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar um arquivo</strong><br /></p>
+          <input type="file" id="fileUpload" name="fileUpload" hidden />
+        </div><br />
+
+        <label for="annotation" data-i18n="contentSubmission.annotationsLabel">Anotações sobre o conteúdo:</label>
+        <textarea id="annotation" placeholder="Descreva o conteúdo ou observações importantes..."
+          data-i18n-placeholder="contentSubmission.annotationsPlaceholder"></textarea><br /><br />
+
+        <button id="submitContentBtn" data-i18n="contentSubmission.submitButton">Enviar Conteúdo</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="versionControl.title">Controle de Versão</h2>
+      <table>
+        <tr>
+          <th data-i18n="versionControl.titleCol">Título</th>
+          <th data-i18n="versionControl.versionCol">Versão</th>
+          <th data-i18n="versionControl.dateCol">Data</th>
+          <th data-i18n="versionControl.statusCol">Status</th>
+        </tr>
+        <tr>
+          <td>Mapa da Paraíba</td>
+          <td>v2.1</td>
+          <td>10/06/2025</td>
+          <td data-i18n="versionControl.updated">Atualizado</td>
+        </tr>
+        <tr>
+          <td>Relatório de 1930</td>
+          <td>v1.0</td>
+          <td>02/06/2025</td>
+          <td data-i18n="versionControl.original">Original</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="pendingReviews.title">Revisões Pendentes</h2>
+        <table>
+          <tr>
+            <th data-i18n="pendingReviews.titleCol">Título</th>
+            <th data-i18n="pendingReviews.userCol">Usuário</th>
+            <th data-i18n="pendingReviews.dateCol">Data</th>
+            <th data-i18n="pendingReviews.actionCol">Ação</th>
+          </tr>
+          <tr>
+            <td>História Urbana</td>
+            <td>João Paulo</td>
+            <td>05/06/2025</td>
+            <td>
+              <button class="btn-profile-style" data-i18n="pendingReviews.downloadBtn">Baixar</button>
+              <button class="btn-profile-style" id="approveBtn" data-i18n="pendingReviews.approveBtn">Aprovar</button>
+              <button class="btn-profile-style" id="rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
+            </td>
+          </tr>
+        </table>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="changeHistory.title">Histórico de Alterações</h2>
+      <table>
+        <tr>
+          <th data-i18n="changeHistory.userCol">Usuário</th>
+          <th data-i18n="changeHistory.actionCol">Ação</th>
+          <th data-i18n="changeHistory.contentCol">Conteúdo</th>
+          <th data-i18n="changeHistory.dateCol">Data</th>
+        </tr>
+        <tr>
+          <td>Maria Almeida</td>
+          <td data-i18n="changeHistory.actionEditTitle">Edição de Título</td>
+          <td data-i18n="changeHistory.contentDocumentA">Documento A</td>
+          <td>03/06/2025</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="adminContentSubmission.title">Fluxo de Submissão de Conteúdo dos Administradores</h2>
+      <table>
+        <tr>
+          <th data-i18n="adminContentSubmission.titleCol">Título do Conteúdo</th>
+          <th data-i18n="adminContentSubmission.adminCol">Administrador</th>
+          <th data-i18n="adminContentSubmission.dateCol">Data de Submissão</th>
+          <th data-i18n="adminContentSubmission.statusCol">Status</th>
+          <th data-i18n="adminContentSubmission.actionsCol">Ações</th>
+        </tr>
+        <tr>
+          <td data-i18n="adminContentSubmission.content.mapUpdate">Atualização do Mapa Paraibano</td>
+          <td>Carlos Silva</td>
+          <td>12/06/2025</td>
+          <td data-i18n="adminContentSubmission.approved">Aprovado</td>
+          <td>
+            <button class="btn-profile-style" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+          </td>
+        </tr>
+        <tr>
+          <td data-i18n="adminContentSubmission.content.generalPhoto">Fotografia de General</td>
+          <td>Matheus Silveira</td>
+          <td>12/08/2025</td>
+          <td data-i18n="adminContentSubmission.rejected">Rejeitado</td>
+          <td>
+            <button class="btn-profile-style" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="section">
+      <h2 data-i18n="mostAccessed.title">Conteúdos Mais Acessados</h2>
+      <ul class="most-accessed-list">
+        <li data-i18n="mostAccessed.map">Mapa da Paraíba - X acessos</li>
+        <li data-i18n="mostAccessed.report">Relatório de 1930 - X acessos</li>
+        <li data-i18n="mostAccessed.history">História Urbana - X acessos</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2 data-i18n="exportReports.title">Exportação de Relatório</h2>
+      <div class="export-buttons">
+        <button data-i18n="exportReports.csvBtn">Exportar CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-section">
+    <div class="ufmg-logo"><span data-i18n="footer.logo">BR 1930</span></div>
+    <p data-i18n="footer.database">Base de Dados</p>
+    <p data-i18n="footer.rights">Todos os Direitos Reservados</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank">
+        <img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo">
+      </a>
+      <a href="https://fcja.pb.gov.br/" target="_blank">
+        <img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo">
+      </a>
+      <a href="https://fapesq.rpp.br/" target="_blank">
+        <img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo">
+      </a>
+      <a href="https://www.ufpb.br/" target="_blank">
+        <img src="../icones/ufpb__logo.png" alt="UFPB Logo">
+      </a>
+      <a href="https://www.ifpb.edu.br/" target="_blank">
+        <img src="../icones/ifpb_logo.png" alt="IFPB Logo">
+      </a>
+      <a href="https://codata.pb.gov.br/" target="_blank">
+        <img src="../icones/codata_logo.png" alt="CODATA Logo">
+      </a>
+      <a href="https://dspace.lyrasis.org/" target="_blank">
+        <img src="../icones/dspace_logo-removebg-preview.png" alt="DSpace Logo">
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="link da conta no instagram" target="_blank">
+        <img src="../icones/instagram.png" alt="Instagram" style="height: 20px;">
+      </a>
+      <a href="link do canal" target="_blank">
+        <img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function translatePage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (translations[lang] && translations[lang][key]) {
+          el.setAttribute("placeholder", translations[lang][key]);
+        }
+      });
+    }
+
+    document.getElementById("language-selector").addEventListener("change", function () {
+      const selectedLang = this.value;
+      translatePage(selectedLang);
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const defaultLang = document.getElementById("language-selector").value;
+      translatePage(defaultLang);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let authors = [];
+
+      const addAuthorBtn = document.getElementById('addAuthorBtn');
+      const autorInput = document.getElementById('autorInput');
+      const authorsList = document.getElementById('authorsList');
+      const btn = document.getElementById("submitContentBtn");
+      const fileInput = document.getElementById("fileUpload");
+
+      const fileNameDisplay = document.createElement("p");
+      fileNameDisplay.style.fontWeight = "bold";
+      fileNameDisplay.style.marginTop = "8px";
+      fileNameDisplay.style.color = "#444";
+      fileInput.parentNode.insertBefore(fileNameDisplay, fileInput.nextSibling);
+
+      fileInput.addEventListener("change", () => {
+        if (fileInput.files.length > 0) {
+          fileNameDisplay.textContent = `Arquivo selecionado: ${fileInput.files[0].name}`;
+        } else {
+          fileNameDisplay.textContent = "";
+        }
+      });
+
+      addAuthorBtn.addEventListener('click', () => {
+        const newAuthor = autorInput.value.trim();
+        if (newAuthor && !authors.includes(newAuthor)) {
+          authors.push(newAuthor);
+
+          const li = document.createElement('li');
+          li.textContent = newAuthor;
+
+          const removeBtn = document.createElement('button');
+          removeBtn.textContent = '×';
+          removeBtn.style.marginLeft = '8px';
+          removeBtn.style.color = 'red';
+          removeBtn.style.border = 'none';
+          removeBtn.style.background = 'transparent';
+          removeBtn.style.cursor = 'pointer';
+          removeBtn.title = 'Remover autor';
+
+          removeBtn.addEventListener('click', () => {
+            authorsList.removeChild(li);
+            authors = authors.filter(a => a !== newAuthor);
+          });
+
+          li.appendChild(removeBtn);
+          authorsList.appendChild(li);
+
+          autorInput.value = '';
+        }
+      });
+
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const titulo = document.getElementById("titulo").value.trim();
+        const anotacoes = document.getElementById("annotation").value.trim();
+        const arquivo = fileInput.files[0];
+
+        const metadadosSelecionados = Array.from(document.querySelectorAll("input[name='metadados']:checked"))
+          .map(checkbox => checkbox.value);
+
+        if (!titulo) {
+          alert("Por favor, preencha o campo Título.");
+          return;
+        }
+
+        if (authors.length === 0) {
+          alert("Por favor, adicione pelo menos um autor.");
+          return;
+        }
+
+        if (!arquivo) {
+          alert("Por favor, selecione um arquivo para upload.");
+          return;
+        }
+
+        if (metadadosSelecionados.length === 0) {
+          alert("Por favor, selecione pelo menos um metadado.");
+          return;
+        }
+
+        const dados = {
+          titulo,
+          autores: authors,
+          anotacoes,
+          metadados: metadadosSelecionados,
+          arquivo
+        };
+
+        console.log("Dados a enviar:", dados);
+
+        alert(
+          `Conteúdo enviado com sucesso!\n\n` +
+          `Título: ${titulo}\n` +
+          `Autores: ${authors.join(", ")}\n` +
+          `Anotações: ${anotacoes ? anotacoes : 'Nenhuma anotação'}\n` +
+          `Arquivo enviado: ${arquivo.name}`
+        );
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const approveBtn = document.getElementById("approveBtn");
+      const rejectBtn = document.getElementById("rejectBtn");
+
+      if (approveBtn) {
+        approveBtn.addEventListener("click", () => {
+          alert("Conteúdo aprovado, email de aprovação enviado para o usuário!");
+        });
+      }
+
+      if (rejectBtn) {
+        rejectBtn.addEventListener("click", () => {
+          alert("Conteúdo rejeitado, email de rejeição enviado para o usuário!");
+        });
+      }
+    });
+  </script>
+
+
+</body>
+</html>
+
+  <style>
+    :root {
+      --primary: #8B0000;
+      --accent: #F5F5F5;
+      --text-dark: #222;
+      --text-light: #fff;
+      --border-color: #ddd;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Georgia', serif;
+      font-size: 18px;
+      color: var(--text-dark);
+      background-color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 2vh 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: #000;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2vw;
+      position: relative;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #language-selector {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border: 3px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 6px;
+      cursor: pointer;
+      min-width: 160px;
+      outline-offset: 3px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .container {
+      padding: 50px 80px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid var(--border-color);
+      padding: 25px;
+      flex: 1 1 260px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    .card p {
+      margin: 8px 0 0;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+
+    table th,
+    table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #f0f0f0;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 10px 0;
+    }
+
+    .checkbox-group label {
+      background-color: #f0f0f0;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      transform: scale(1.2);
+      accent-color: var(--primary);
+    }
+
+    .file-upload {
+      border: 2px dashed var(--primary);
+      padding: 40px;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    #submitContentBtn {
+      background-color: #8B0000;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3rem;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-block;
+      user-select: none;
+    }
+
+    .graph-bar {
+      height: 24px;
+      background: var(--primary);
+      margin: 6px 0;
+      border-radius: 4px;
+      color: var(--text-light);
+      padding-left: 12px;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .export-buttons button {
+      background-color: var(--primary);
+      color: var(--text-light);
+      border: none;
+      padding: 12px 18px;
+      margin-right: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .export-buttons button:hover {
+      background-color: #a50000;
+    }
+
+    .user-profile {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      padding: 35px;
+      margin-bottom: 50px;
+      border-radius: 10px;
+    }
+
+    .user-header {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 25px;
+    }
+
+    .profile-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary);
+    }
+
+    .user-info h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .user-info p {
+      margin: 6px 0 12px;
+      color: #666;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+
+    .user-actions button {
+      background-color: var(--primary);
+      color: var(--text-light);
+      border: none;
+      padding: 12px 20px;
+      margin-right: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .user-actions button:hover {
+      background-color: #a50000;
+    }
+
+    .btn-profile-style {
+      background-color: var(--primary);
+      color: var(--text-light);
+      border: none;
+      padding: 12px 20px;
+      margin-right: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-profile-style:hover {
+      background-color: #a50000;
+    }
+
+    .user-stats.cards {
+      gap: 25px;
+      flex-wrap: wrap;
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .last-access {
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .most-accessed-list {
+      list-style-type: disc;
+      padding-left: 25px;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.15rem;
+    }
+
+    .most-accessed-list li {
+      margin-bottom: 10px;
+    }
+
+    .upload-area input[type="text"],
+    .upload-area textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      margin-top: 5px;
+    }
+
+    .metadata-input {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #metadadoInput {
+      font-size: 1rem;
+      padding: 8px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background-color: #eee;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag .remove-tag {
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .footer-section {
+      background-color: #e87474e9;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #e87474e9;
+      color: white;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      flex-wrap: wrap;
+      font-size: 1.1rem;
+    }
+
+    .footer-bottom .left-logos img {
+      height: 40px;
+      margin-right: 15px;
+    }
+
+    .footer-section .footer-links a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    a > button {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
