@@ -41,7 +41,7 @@
           <p data-i18n="user.institution">Instituto Federal de Educação da Paraíba</p>
           <p>carlos_oliveria@gmail.com</p>
           <p data-i18n="user.formacao">Doutorado</p>
-          <p data-i18n="user.cidade">João Pessoa</p>
+          <p data-i18n="user.local">PB/João Pessoa</p>
           
           <div class="user-actions">
             <a href="./configuracoes_admin.html">
@@ -84,6 +84,10 @@
       <h2 data-i18n="generalStats.title">Estatísticas Gerais</h2>
       <div class="cards">
         <div class="card">
+          <h3 data-i18n="generalStats.userCount">Usuários Cadastrados</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
           <h3 data-i18n="generalStats.userSubmissions">Submissões de Usuários</h3>
           <p>X</p>
         </div>
@@ -92,11 +96,19 @@
           <p>X</p>
         </div>
         <div class="card">
-          <h3 data-i18n="generalStats.siteAccess">Acessos ao Site</h3>
+          <h3 data-i18n="generalStats.downloads">Downloads</h3>
           <p>X</p>
         </div>
         <div class="card">
-          <h3 data-i18n="generalStats.downloads">Downloads</h3>
+          <h3 data-i18n="generalStats.registeredUserAccess">Acessos de Usuários Cadastrados</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="generalStats.unregisteredUserAccess">Acessos de Usuários Não Cadastrados</h3>
+          <p>X</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="generalStats.siteAccess">Acessos Total ao Site</h3>
           <p>X</p>
         </div>
       </div>
@@ -116,17 +128,17 @@
         </div>
         <ul id="authorsList" style="margin-top: 10px; list-style: disc inside;"></ul><br />
 
-        <label data-i18n="contentSubmission.metadataLabel">Metadados:</label><br />
+        <label data-i18n="contentSubmission.keywordLabel">Palavras-chave:</label><br />
         <div class="checkbox-group" id="metadados-checkboxes">
-          <label><input type="checkbox" name="metadados" value="audio"> Áudio</label>
-          <label><input type="checkbox" name="metadados" value="tese"> Dissertação/Tese</label>
-          <label><input type="checkbox" name="metadados" value="documento"> Documento</label>
-          <label><input type="checkbox" name="metadados" value="entrevista"> Entrevista</label>
-          <label><input type="checkbox" name="metadados" value="imagem"> Imagem</label>
-          <label><input type="checkbox" name="metadados" value="livro"> Livro</label>
-          <label><input type="checkbox" name="metadados" value="periodico"> Periódico</label>
-          <label><input type="checkbox" name="metadados" value="video"> Vídeo</label>
-          <label><input type="checkbox" name="metadados" value="terriorio"> Território de Princesa Isabel</label>
+          <label><input type="checkbox" name="keyword" value="audio"> Áudio</label>
+          <label><input type="checkbox" name="keyword" value="tese"> Dissertação/Tese</label>
+          <label><input type="checkbox" name="keyword" value="documento"> Documento</label>
+          <label><input type="checkbox" name="keyword" value="entrevista"> Entrevista</label>
+          <label><input type="checkbox" name="keyword" value="imagem"> Imagem</label>
+          <label><input type="checkbox" name="keyword" value="livro"> Livro</label>
+          <label><input type="checkbox" name="keyword" value="periodico"> Periódico</label>
+          <label><input type="checkbox" name="keyword" value="video"> Vídeo</label>
+          <label><input type="checkbox" name="keyword" value="terriorio"> Território de Princesa Isabel</label>
         </div><br />
 
         <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
@@ -709,7 +721,6 @@
     }
 
     .btn-profile-style {
-      background-color: var(--primary);
       color: var(--text-light);
       border: none;
       padding: 12px 20px;
@@ -721,8 +732,28 @@
       transition: background-color 0.3s ease;
     }
 
-    .btn-profile-style:hover {
-      background-color: #a50000;
+    .btn-profile-style:not(#approveBtn):not(#rejectBtn) {
+      background-color: #6c757d;
+    }
+
+    .btn-profile-style:not(#approveBtn):not(#rejectBtn):hover {
+      background-color: #5a6268;
+    }
+
+    #approveBtn {
+      background-color: #28a745;
+    }
+
+    #approveBtn:hover {
+      background-color: #218838;
+    }
+
+    #rejectBtn {
+      background-color: #dc3545;
+    }
+
+    #rejectBtn:hover {
+      background-color: #c82333;
     }
 
     .user-stats.cards {
