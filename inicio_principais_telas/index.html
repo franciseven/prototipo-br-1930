@@ -8,60 +8,62 @@
 </head>
 
 <body>
-  <header>
-    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
-      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
-    </a>
-    <nav>
-      <a href="./sobre.html" data-i18n="sobre">Sobre</a>
-      <a href="./politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
-      <a href="./instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
-      <a href="./login.html" data-i18n="usuario">Usuário</a>
-      <a href="./contato.html" data-i18n="contato">Contato</a>
-      <a href="./manual.html" data-i18n="manual">Manual</a>
-      <select id="language-selector">
-        <option value="pt">Português</option>
-        <option value="en">English</option>
-        <option value="es">Español</option>
-      </select>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="hero-images">
-      <img src="./capa_inicio/joao_pessoa.jpeg" alt="Imagem 1" data-desc="Retrato de João Pessoa">
-      <img src="./capa_inicio/rebeldes_princesa.jpeg" alt="Imagem 2" data-desc="Movimento de 30 - Rebeldes em Princesa/PB">
-      <img src="./capa_inicio/visita_presidente_revolucionario.jpeg" alt="Imagem 3" data-desc="Visita do presidente revolucionário do norte do Brasil">
-      <img src="./capa_inicio/sepultura_tenente_genesio.jpg" alt="Imagem 4" data-desc="Movimento de 30 - Sepultura do Tenente Genésio e os Companheiros - Água Branca/PB.">
-    </div>
-  </section>
-
-  <h1 data-i18n="titulo" class="hero-title">BR 1930 - A Caminho do Centenário</h1>
-
-  <section class="search-section">
-    <div class="caixa-pesquisa-geral">
-      <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" data-i18n-placeholder="placeholder" />
-      <button onclick="pesquisar()" data-i18n="pesquisa_btn">Pesquisar</button>
-    </div>
-  </section>
-
-  <section class="browse-section">
-    <a href="../colecoes_telas/audios.html" class="browse-box"><h3>Áudios</h3><p>Gravações sobre os acontecimentos históricos ocorridos na década de 1930.</p></a>
-    <a href="../colecoes_telas/dissertacoes_e_teses.html" class="browse-box"><h3>Dissertações e Teses</h3><p>Informações sobre a década de 1930 através de dissertações e teses.</p></a>
-    <a href="../colecoes_telas/documentos.html" class="browse-box"><h3>Documentos</h3><p>Documentos textuais sobre a trajetória de José Américo de Almeida no ano de 1930.</p></a>
-    <a href="../colecoes_telas/entrevistas.html" class="browse-box"><h3>Entrevistas</h3><p>Entrevistas de personagens e pesquisadores da década de 1930.</p></a>
-    <a href="../colecoes_telas/imagens.html" class="browse-box"><h3>Imagens</h3><p>Registros visuais sobre eventos sucedidos no descênio de 1930.</p></a>
-    <a href="../colecoes_telas/livros.html" class="browse-box move"><h3>Livros</h3><p>Livros relacionados à década de 1930.</p></a>
-    <a href="../colecoes_telas/periodicos.html" class="browse-box move"><h3>Periódicos</h3><p>Revistas e matérias jornalísticas sobre a década de 1930.</p></a>
-    <a href="../colecoes_telas/territorio_isabel.html" class="browse-box move"><h3>Território Livre de Princesa Isabel</h3><p>Documentos relativos ao Coronel José Pereira Lima e a "Revolta de Princesa"</p></a>
-    <a href="../colecoes_telas/videos.html" class="browse-box move"><h3>Vídeos</h3><p>Registros audiovisuais sobre a década de 1930.</p></a>
-  </section>
-
-  <div id="popup-colab">
-    <div class="popup-content">
-      <button class="close-btn" onclick="document.getElementById('popup-colab').style.display='none'">x</button>
-      <p id="popup-text">Quer colaborar com a plataforma? Faça login para aproveitar novas funcionalidades como o envio de arquivos. Caso queira ajudar ainda mais, preencha o nosso formulário!</p>
-      <a href="https://forms.gle/yoC3z1ri5tgC8UzGA" target="_blank" id="popup-link">Acesse o formulário aqui</a>
+  <div class="conteudo">
+    <header>
+      <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+        <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+      </a>
+      <nav>
+        <a href="./sobre.html" data-i18n="sobre">Sobre</a>
+        <a href="./politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+        <a href="./instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+        <a href="./login.html" data-i18n="usuario">Usuário</a>
+        <a href="./contato.html" data-i18n="contato">Contato</a>
+        <a href="./manual.html" data-i18n="manual">Manual</a>
+        <select id="language-selector">
+          <option value="pt">Português</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </nav>
+    </header>
+  
+    <section class="hero">
+      <div class="hero-images">
+        <img src="./capa_inicio/joao_pessoa.jpeg" alt="Imagem 1" data-desc="Retrato de João Pessoa">
+        <img src="./capa_inicio/rebeldes_princesa.jpeg" alt="Imagem 2" data-desc="Movimento de 30 - Rebeldes em Princesa/PB">
+        <img src="./capa_inicio/visita_presidente_revolucionario.jpeg" alt="Imagem 3" data-desc="Visita do presidente revolucionário do norte do Brasil">
+        <img src="./capa_inicio/sepultura_tenente_genesio.jpg" alt="Imagem 4" data-desc="Movimento de 30 - Sepultura do Tenente Genésio e os Companheiros - Água Branca/PB.">
+      </div>
+    </section>
+  
+    <h1 data-i18n="titulo" class="hero-title">BR 1930 - A Caminho do Centenário</h1>
+  
+    <section class="search-section">
+      <div class="caixa-pesquisa-geral">
+        <input type="text" id="pesquisaGeral" placeholder="Pesquise aqui" data-i18n-placeholder="placeholder" />
+        <button onclick="pesquisar()" data-i18n="pesquisa_btn">Pesquisar</button>
+      </div>
+    </section>
+  
+    <section class="browse-section">
+      <a href="../colecoes_telas/audios.html" class="browse-box"><h3>Áudios</h3><p>Gravações sobre os acontecimentos históricos ocorridos na década de 1930.</p></a>
+      <a href="../colecoes_telas/dissertacoes_e_teses.html" class="browse-box"><h3>Dissertações e Teses</h3><p>Informações sobre a década de 1930 através de dissertações e teses.</p></a>
+      <a href="../colecoes_telas/documentos.html" class="browse-box"><h3>Documentos</h3><p>Documentos textuais sobre a trajetória de José Américo de Almeida no ano de 1930.</p></a>
+      <a href="../colecoes_telas/entrevistas.html" class="browse-box"><h3>Entrevistas</h3><p>Entrevistas de personagens e pesquisadores da década de 1930.</p></a>
+      <a href="../colecoes_telas/imagens.html" class="browse-box"><h3>Imagens</h3><p>Registros visuais sobre eventos sucedidos no descênio de 1930.</p></a>
+      <a href="../colecoes_telas/livros.html" class="browse-box move"><h3>Livros</h3><p>Livros relacionados à década de 1930.</p></a>
+      <a href="../colecoes_telas/periodicos.html" class="browse-box move"><h3>Periódicos</h3><p>Revistas e matérias jornalísticas sobre a década de 1930.</p></a>
+      <a href="../colecoes_telas/territorio_isabel.html" class="browse-box move"><h3>Território Livre de Princesa Isabel</h3><p>Documentos relativos ao Coronel José Pereira Lima e a "Revolta de Princesa"</p></a>
+      <a href="../colecoes_telas/videos.html" class="browse-box move"><h3>Vídeos</h3><p>Registros audiovisuais sobre a década de 1930.</p></a>
+    </section>
+  
+    <div id="popup-colab">
+      <div class="popup-content">
+        <button class="close-btn" onclick="document.getElementById('popup-colab').style.display='none'">x</button>
+        <p id="popup-text">Quer colaborar com a plataforma? Faça login para aproveitar novas funcionalidades como o envio de arquivos. Caso queira ajudar ainda mais, preencha o nosso formulário!</p>
+        <a href="https://forms.gle/yoC3z1ri5tgC8UzGA" target="_blank" id="popup-link">Acesse o formulário aqui</a>
+      </div>
     </div>
   </div>
 
@@ -165,6 +167,14 @@
       color: var(--text-dark);
       line-height: 1.6;
       font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .conteudo {
+      flex: 1;
     }
 
     header {
