@@ -50,9 +50,10 @@
       <div class="navegar-tabs" id="tabs">
         <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
         <button class="tab" data-target="filtros-autor">Autores</button>
-        <button class="tab" data-target="filtros-data">Data de Publicação</button>
         <button class="tab" data-target="filtros-titulo">Títulos</button>
-        <button class="tab" data-target="filtros-genero">Gêneros Literários</button>
+        <button class="tab" data-target="filtros-edicao">Edição</button>
+        <button class="tab" data-target="filtros-data">Data de Publicação</button>
+        <button class="tab" data-target="filtros-genero">Gêneros</button>
       </div>
     </div>
 
@@ -115,6 +116,9 @@
           <option>Ficção</option>
           <option>Biografia</option>
           <option>Acadêmico</option>
+          <option>Texto Literário</option>
+          <option>Texto Não Literário</option>
+          <option>Texto Científico</option>
         </select>
         <input type="text" placeholder="Digite o gênero" />
         <button>Pesquisar</button>
@@ -129,6 +133,18 @@
           <option>A Bagaceira</option>
         </select>
         <input type="text" placeholder="Digite o título" />
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-edicao" style="display:none;">
+      <label>Filtrar livro por edição</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha a edição)</option>
+          <option>1ª Edição</option>
+        </select>
+        <input type="text" placeholder="Digite a edição" />
         <button>Pesquisar</button>
       </div>
     </div>
