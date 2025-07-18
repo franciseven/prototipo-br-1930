@@ -52,7 +52,6 @@
         <button class="tab" data-target="filtros-autor">Autores</button>
         <button class="tab" data-target="filtros-data">Data de Publicação</button>
         <button class="tab" data-target="filtros-formato">Formatos</button>
-        <button class="tab" data-target="filtros-entrevistas-impressas">Entrevistas Impressas</button>
         <button class="tab" data-target="filtros-materias-jornalisticas">Matérias Jornalísticas</button>
         <button class="tab" data-target="filtros-revistas">Revistas</button>
       </div>
@@ -122,40 +121,6 @@
       </div>
     </div>
 
-    <div class="filtros" id="filtros-entrevistas-impressas" style="display:none;">
-      <label>Filtrar periódico por entrevista</label>
-      <div class="filtros-inputs">
-        <select id="entrevistas-impressas-select">
-          <option value="">(Escolha a entrevista impressa)</option>
-          <option value="entrevistador">Entrevistador</option>
-          <option value="formato">Formato</option>
-          <option value="instituicao">Instituição</option>
-        </select>
-
-        <select id="entrevistas-entrevistador-select" style="display: none;">
-          <option value="">(Escolha o entrevistador)</option>
-          <option value="jose-americo">José Américo</option>
-          <option value="rosa-godoy">Rosa Godoy</option>
-        </select>
-
-        <select id="entrevistas-formato-select" style="display: none;">
-          <option value="">(Escolha o formato)</option>
-          <option value="audio">Áudio</option>
-          <option value="video">Vídeo</option>
-          <option value="texto">Texto</option>
-        </select>
-
-        <select id="entrevistas-instituicao-select" style="display: none;">
-          <option value="">(Escolha a instituição)</option>
-          <option value="FGV">FGV</option>
-          <option value="FCJA">FCJA</option>
-        </select>
-
-        <input type="text" id="entrevistas-impressas-input" placeholder="Digite a entrevista" />
-        <button>Pesquisar</button>
-      </div>
-    </div>
-
     <div class="filtros" id="filtros-materias-jornalisticas" style="display:none;">
       <label>Filtrar periódico por matéria jornalística</label>
       <div class="filtros-inputs">
@@ -179,10 +144,10 @@
 
         <select id="materias-impressas-tipo-select" style="display: none;">
           <option value="">(Escolha o tipo)</option>
-          <option value="fragmento">Fragmento</option>
-          <option value="material">Matéria</option>
-          <option value="recorte">Recorte</option>
-          <option value="revista">Revista</option>
+          <option value="discurso">Discurso</option>
+          <option value="noticia">Notícia</option>
+          <option value="artigo">Artigo</option>
+          <option value="relatorio">Relatório</option>
         </select>
 
         <input type="text" id="materia-jornalistica-input" placeholder="Digite a matéria jornalística" />
@@ -234,19 +199,6 @@
           <p class="autor">Jornal A União</p>
           <p class="descricao collapsed">
             Matéria Jornalística sobre o aniversário de 2 anos da Revolução de 1930.
-          </p>
-          <a href="#" class="toggle-descricao">Mostrar mais</a>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="../capas_colecoes/periodicos/capa_entrevista_impressa_1-.png" alt="Capa da periódico 2" />
-        <div class="item-info">
-          <div class="item-tag">Periódico</div>
-          <h3><a href="../itens_selecionados_telas/periodico_2_selecionado.html" style="text-decoration: none; color: inherit;">Entrevista com José Pereira</a></h3>
-          <p class="autor">O Cruzeiro (RJ)</p>
-          <p class="descricao collapsed">
-            Entrevista com José Pereira que desligou o município paraibano de Princesa da comunidade estadual e o proclamou independente.
           </p>
           <a href="#" class="toggle-descricao">Mostrar mais</a>
         </div>
