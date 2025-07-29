@@ -51,6 +51,7 @@
         <button class="tab active" data-target="filtros-recentes">Submissões Recentes</button>
         <button class="tab" data-target="filtros-data">Data de Publicação</button>
         <button class="tab" data-target="filtros-entrevistador">Entrevistadores</button>
+        <button class="tab" data-target="filtros-entrevistado">Entrevistados</button>
         <button class="tab" data-target="filtros-formato">Formatos</button>
         <button class="tab" data-target="filtros-instituicao">Instituições</button>
       </div>
@@ -99,10 +100,24 @@
       <div class="filtros-inputs">
         <select>
           <option>(Escolha o entrevistador)</option>
+          <option>Fulano</option>
+          <option>Sicrano</option>
+          <option>Beltrano</option>
+        </select>
+        <input type="text" placeholder="Digite o entrevistador" />
+        <button>Pesquisar</button>
+      </div>
+    </div>
+
+    <div class="filtros" id="filtros-entrevistado" style="display:none;">
+      <label>Filtrar entrevista por entrevistado</label>
+      <div class="filtros-inputs">
+        <select>
+          <option>(Escolha o entrevistado)</option>
           <option>José Américo</option>
           <option>Rosa Godoy</option>
         </select>
-        <input type="text" placeholder="Digite o entrevistador" />
+        <input type="text" placeholder="Digite o entrevistado" />
         <button>Pesquisar</button>
       </div>
     </div>
