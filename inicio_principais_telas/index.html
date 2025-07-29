@@ -222,16 +222,25 @@
 
   .hero-images {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     height: 100%;
+    overflow: hidden;
+    border: 5px solid #000000;
+    box-sizing: border-box;
   }
 
   .hero-images img {
     height: 100%;
     width: auto;
-    object-fit: contain;
+    object-fit: cover;
+    flex-shrink: 0;
     cursor: pointer;
+    border-right: 4px solid #000000;
+  }
+
+  .hero-images img:last-child {
+    border-right: none;
   }
 
   .tooltip {
@@ -254,6 +263,20 @@
     font-size: clamp(1.8rem, 3vw, 3rem);
     color: #1c1c1c;
     font-weight: 700;
+  }
+
+  .hero-description {
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: #444;
+    font-weight: 500;
+    font-style: italic;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;  
   }
 
   .search-section {
