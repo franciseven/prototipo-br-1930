@@ -74,10 +74,6 @@
           <p>X</p>
         </div>
       </div>
-
-      <div class="last-access">
-        <strong data-i18n="lastAccess.label">Último Acesso:</strong> <span data-i18n="lastAccess.date">01/06/2025</span>
-      </div>
     </div>
 
     <div class="section">
@@ -119,7 +115,7 @@
 
       <div class="upload-area">
         <label for="titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
-        <input type="text" id="titulo" name="titulo" required /><br /><br />
+        <input type="text" id="titulo" name="titulo" /><br /><br />
 
         <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
         <div id="author-input-group">
@@ -150,103 +146,201 @@
         <textarea id="annotation" placeholder="Descreva o conteúdo ou observações importantes..."
           data-i18n-placeholder="contentSubmission.annotationsPlaceholder"></textarea><br /><br />
 
+        <label for="visibility">Visibilidade:</label>
+        <select id="visibility" name="visibility" class="visibilidade-select">
+          <option value="censurado">Censurado - Conteúdo proibido para menores de idade</option>
+          <option value="completo">Completo - Acesso livre para todos</option>
+          <option value="analise">Análise - Conteúdo possivelmente nocivo</option>
+          <option value="referencia">Referência - Conteúdo bloqueado por direitos autorais, apenas referenciar</option>
+        </select><br /><br />
+
         <button id="submitContentBtn" data-i18n="contentSubmission.submitButton">Enviar Conteúdo</button>
       </div>
     </div>
 
     <div class="section">
-      <h2 data-i18n="versionControl.title">Controle de Versão</h2>
-      <table>
-        <tr>
-          <th data-i18n="versionControl.titleCol">Título</th>
-          <th data-i18n="versionControl.versionCol">Versão</th>
-          <th data-i18n="versionControl.dateCol">Data</th>
-          <th data-i18n="versionControl.statusCol">Status</th>
-        </tr>
-        <tr>
-          <td>Mapa da Paraíba</td>
-          <td>v2.1</td>
-          <td>10/06/2025</td>
-          <td data-i18n="versionControl.updated">Atualizado</td>
-        </tr>
-        <tr>
-          <td>Relatório de 1930</td>
-          <td>v1.0</td>
-          <td>02/06/2025</td>
-          <td data-i18n="versionControl.original">Original</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="section">
-      <h2 data-i18n="pendingReviews.title">Revisões Pendentes</h2>
+      <h2 data-i18n="history.title">Histórico de Submissões</h2>
+      <div class="tabela-container">
         <table>
           <tr>
-            <th data-i18n="pendingReviews.titleCol">Título</th>
-            <th data-i18n="pendingReviews.userCol">Usuário</th>
-            <th data-i18n="pendingReviews.dateCol">Data</th>
-            <th data-i18n="pendingReviews.actionCol">Ação</th>
+            <th data-i18n="history.titleCol">Título</th>
+            <th data-i18n="history.dateCol">Data</th>
+            <th data-i18n="history.ownerCol">Proprietário</th>
+            <th data-i18n="history.statusCol">Status</th>
+            <th data-i18n="history.versionCol">Versão</th>
+            <th data-i18n="history.activityCol">Atividade</th>
+            <th data-i18n="adminContentSubmission.actionsCol">Ação</th>
           </tr>
           <tr>
-            <td>História Urbana</td>
-            <td>João Paulo</td>
-            <td>05/06/2025</td>
+            <td data-i18n="adminContentSubmission.content.generalPhoto">Mapa Paraibano dos Anos 30</td>
+            <td>12/08/2025</td>
+            <td>Fernanda Pereira Matos</td>
+            <td data-i18n="adminContentSubmission.approved">Atualizado</td>
+            <td>v2.0</td>
+            <td>Alteração de Palavra-Chave</td>
             <td>
-              <button class="btn-profile-style" data-i18n="pendingReviews.downloadBtn">Baixar</button>
-              <button class="btn-profile-style" id="approveBtn" data-i18n="pendingReviews.approveBtn">Aprovar</button>
-              <button class="btn-profile-style" id="rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
+              <button class="btn-profile-style" id="viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style" id="downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style" id="deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
+          </tr>
+          <tr>
+            <td data-i18n="adminContentSubmission.content.generalPhoto">Mapa Paraibano dos Anos 30</td>
+            <td>12/08/2025</td>
+            <td>Fernanda Pereira Matos</td>
+            <td data-i18n="adminContentSubmission.approved">Original</td>
+            <td>v1.0</td>
+            <td>Upload</td>
+            <td>
+              <button class="btn-profile-style" id="viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style" id="downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style" id="deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
             </td>
           </tr>
         </table>
+      </div>
     </div>
 
     <div class="section">
-      <h2 data-i18n="changeHistory.title">Histórico de Alterações</h2>
-      <table>
-        <tr>
-          <th data-i18n="changeHistory.userCol">Usuário</th>
-          <th data-i18n="changeHistory.actionCol">Ação</th>
-          <th data-i18n="changeHistory.contentCol">Conteúdo</th>
-          <th data-i18n="changeHistory.dateCol">Data</th>
-        </tr>
-        <tr>
-          <td>Maria Almeida</td>
-          <td data-i18n="changeHistory.actionEditTitle">Edição de Título</td>
-          <td data-i18n="changeHistory.contentDocumentA">Documento A</td>
-          <td>03/06/2025</td>
-        </tr>
-      </table>
+      <h2 data-i18n="pendingReviews.title">Revisões Pendentes dos Usuários</h2>
+        <div class="tabela-container">
+          <table>
+            <tr>
+              <th data-i18n="pendingReviews.titleCol">Título</th>
+              <th data-i18n="pendingReviews.authorCol">Autor</th>
+              <th data-i18n="pendingReviews.userCol">Usuário</th>
+              <th data-i18n="pendingReviews.dateCol">Data</th>
+              <th data-i18n="pendingReviews.visibilityCol">Visibilidade</th>
+              <th data-i18n="pendingReviews.actionCol">Ação</th>
+            </tr>
+            <tr>
+              <td>História Urbana de João Pessoa</td>
+              <td>Maurício Andrade Tamares Gomez</td>
+              <td>Fernanda Pereira Matos</td>
+              <td>15/05/2025</td>
+              <td>Censurado - Conteúdo proibido para menores de idade</td>
+              <td>
+                <button class="btn-profile-style" id="approveBtn" data-i18n="pendingReviews.approveBtn">Aprovar</button>
+                <button class="btn-profile-style" id="rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
+                <button class="btn-profile-style" id="downloadBtn" data-i18n="pendingReviews.downloadBtn">Baixar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Um Estudo Sobre A Revolução de 1930</td>
+              <td>Maurício Andrade Tamares Gomez</td>
+              <td>Fernanda Pereira Matos</td>
+              <td>15/05/2025</td>
+              <td>Censurado - Conteúdo proibido para menores de idade</td>
+              <td>
+                <button class="btn-profile-style" id="approveBtn" data-i18n="pendingReviews.approveBtn">Aprovar</button>
+                <button class="btn-profile-style" id="rejectBtn" data-i18n="pendingReviews.rejectBtn">Rejeitar</button>
+                <button class="btn-profile-style" id="downloadBtn" data-i18n="pendingReviews.downloadBtn">Baixar</button>
+              </td>
+            </tr>
+          </table>
+        </div>
     </div>
 
     <div class="section">
       <h2 data-i18n="adminContentSubmission.title">Fluxo de Submissão de Conteúdo dos Administradores</h2>
-      <table>
-        <tr>
-          <th data-i18n="adminContentSubmission.titleCol">Título do Conteúdo</th>
-          <th data-i18n="adminContentSubmission.adminCol">Administrador</th>
-          <th data-i18n="adminContentSubmission.dateCol">Data de Submissão</th>
-          <th data-i18n="adminContentSubmission.statusCol">Status</th>
-          <th data-i18n="adminContentSubmission.actionsCol">Ações</th>
-        </tr>
-        <tr>
-          <td data-i18n="adminContentSubmission.content.mapUpdate">Atualização do Mapa Paraibano</td>
-          <td>Carlos Silva</td>
-          <td>12/06/2025</td>
-          <td data-i18n="adminContentSubmission.approved">Aprovado</td>
-          <td>
-            <button class="btn-profile-style" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
-          </td>
-        </tr>
-        <tr>
-          <td data-i18n="adminContentSubmission.content.generalPhoto">Fotografia de General</td>
-          <td>Matheus Silveira</td>
-          <td>12/08/2025</td>
-          <td data-i18n="adminContentSubmission.rejected">Rejeitado</td>
-          <td>
-            <button class="btn-profile-style" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
-          </td>
-        </tr>
-      </table>
+      <div class="tabela-container">
+        <table>
+          <tr>
+            <th data-i18n="adminContentSubmission.titleCol">Título</th>
+            <th data-i18n="adminContentSubmission.dateCol">Data</th>
+            <th data-i18n="adminContentSubmission.ownerCol">Proprietário</th>
+            <th data-i18n="adminContentSubmission.adminCol">Administrador</th>
+            <th data-i18n="adminContentSubmission.statusCol">Status</th>
+            <th data-i18n="adminContentSubmission.versionCol">Versão</th>
+            <th data-i18n="adminContentSubmission.activityCol">Atividade</th>
+            <th data-i18n="adminContentSubmission.actionCol">Ação</th>
+          </tr>
+          <tr>
+            <td data-i18n="adminContentSubmission.content.generalPhoto">Mapa Paraibano dos Anos 30</td>
+            <td>12/08/2025</td>
+            <td>Fernanda Pereira Matos</td>
+            <td>Carlos Oliveira da Silva</td>
+            <td data-i18n="adminContentSubmission.approved">Atualizado</td>
+            <td>v2.0</td>
+            <td>Alteração de Palavra-Chave</td>
+            <td>
+              <button class="btn-profile-style" id="viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style" id="downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style" id="deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
+          </tr>
+          <tr>
+            <td data-i18n="adminContentSubmission.content.generalPhoto">Mapa Paraibano dos Anos 30</td>
+            <td>12/08/2025</td>
+            <td>Fernanda Pereira Matos</td>
+            <td>Carlos Oliveira da Silva</td>
+            <td data-i18n="adminContentSubmission.approved">Original</td>
+            <td>v1.0</td>
+            <td>Upload</td>
+            <td>
+              <button class="btn-profile-style" id="viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style" id="downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style" id="deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Filmagem em 1930</td>
+            <td>10/07/2025</td>
+            <td>Fernanda Pereira Matos</td>
+            <td>Carlos Oliveira da Silva</td>
+            <td>Atualizado</td>
+            <td>v2.0</td>
+            <td>Alteração dos Metadados</td>
+            <td>
+              <button class="btn-profile-style" id="viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style" id="downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style" id="deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Filmagem em 1930</td>
+            <td>02/07/2025</td>
+            <td>Fernanda Pereira Matos</td>
+            <td>Carlos Oliveira da Silva</td>
+            <td>Original</td>
+            <td>v1.0</td>
+            <td>Upload</td>
+            <td>
+              <button class="btn-profile-style" id="viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style" id="downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style" id="deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Fotografia do General José Antônio Flores da Cunha</td>
+            <td>22/06/2025</td>
+            <td>Matheus Silveira</td>
+            <td>Carlos Oliveira da Silva</td>
+            <td>Atualizado</td>
+            <td>v2.0</td>
+            <td>Edição de Título</td>
+            <td>
+              <button class="btn-profile-style" id="viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+              <button class="btn-profile-style" id="downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+              <button class="btn-profile-style" id="deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+            </td>
+            <tr>
+              <td>Fotografia de General</td>
+              <td>02/06/2025</td>
+              <td>Matheus Silveira</td>
+              <td>Matheus Silveira</td>
+              <td>Original</td>
+              <td>v1.0</td>
+              <td>Upload</td>
+              <td>
+                <button class="btn-profile-style" id="viewBtn" data-i18n="adminContentSubmission.viewBtn">Visualizar</button>
+                <button class="btn-profile-style" id="downloadBtn" data-i18n="adminContentSubmission.viewBtn">Baixar</button>
+                <button class="btn-profile-style" id="deleteBtn" data-i18n="adminContentSubmission.viewBtn">Remover</button>
+              </td>
+            </tr>
+          </tr>
+        </table>
+      </div>
     </div>
 
 
@@ -374,8 +468,9 @@
         const titulo = document.getElementById("titulo").value.trim();
         const anotacoes = document.getElementById("annotation").value.trim();
         const arquivo = fileInput.files[0];
+        const visibilidade = document.getElementById("visibility").options[document.getElementById("visibility").selectedIndex].text;
 
-        const metadadosSelecionados = Array.from(document.querySelectorAll("input[name='metadados']:checked"))
+        const metadadosSelecionados = Array.from(document.querySelectorAll("input[name='keyword']:checked"))
           .map(checkbox => checkbox.value);
 
         if (!titulo) {
@@ -403,6 +498,7 @@
           autores: authors,
           anotacoes,
           metadados: metadadosSelecionados,
+          visibilidade,
           arquivo
         };
 
@@ -413,6 +509,8 @@
           `Título: ${titulo}\n` +
           `Autores: ${authors.join(", ")}\n` +
           `Anotações: ${anotacoes ? anotacoes : 'Nenhuma anotação'}\n` +
+          `Metadados: ${metadadosSelecionados.join(", ")}\n` +
+          `Visibilidade: ${visibilidade}\n` +
           `Arquivo enviado: ${arquivo.name}`
         );
       });
@@ -421,6 +519,7 @@
     document.addEventListener("DOMContentLoaded", () => {
       const approveBtn = document.getElementById("approveBtn");
       const rejectBtn = document.getElementById("rejectBtn");
+      const deleteBtn = document.getElementById("deleteBtn");
 
       if (approveBtn) {
         approveBtn.addEventListener("click", () => {
@@ -433,6 +532,12 @@
           alert("Conteúdo rejeitado, email de rejeição enviado para o usuário!");
         });
       }
+
+      if (deleteBtn) {
+        deleteBtn.addEventListener("click", () => {
+          alert("Conteúdo rejeitado, email de remoção enviado para o responsável pelo conteúdo!");
+        });
+      }
     });
   </script>
 
@@ -441,15 +546,6 @@
 </html>
 
   <style>
-    :root {
-      --primary: #8B0000;
-      --accent: #F5F5F5;
-      --text-dark: #222;
-      --text-light: #fff;
-      --border-color: #ddd;
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
     html, body {
       height: 100%;
       margin: 0;
@@ -457,7 +553,7 @@
       flex-direction: column;
       font-family: 'Georgia', serif;
       font-size: 18px;
-      color: var(--text-dark);
+      color: #222;
       background-color: #fff;
       line-height: 1.6;
     }
@@ -518,9 +614,9 @@
     .section h2 {
       font-size: 2rem;
       margin-bottom: 20px;
-      border-bottom: 3px solid var(--primary);
+      border-bottom: 3px solid #8B0000;
       padding-bottom: 6px;
-      color: var(--primary);
+      color: #8B0000;
     }
 
     .container {
@@ -535,17 +631,18 @@
 
     .card {
       background-color: white;
-      border: 1px solid var(--border-color);
+      border: 1px solid #ddd;
       padding: 25px;
       flex: 1 1 260px;
       border-radius: 10px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     .card h3 {
       margin: 0;
       font-size: 1.5rem;
-      color: var(--primary);
+      color: #8B0000;
     }
 
     .card p {
@@ -554,22 +651,32 @@
       font-weight: bold;
     }
 
-    table {
+    .tabela-container {
+      max-height: 350px;
+      overflow-y: auto;
+      display: block;
+    }
+
+    .tabela-container table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
       font-size: 1.1rem;
+      max-height: 350px;
+      overflow-y: auto;
     }
 
-    table th,
-    table td {
+    .tabela-container th {
       border: 1px solid #ccc;
       padding: 12px;
-      text-align: left;
+      text-align: center;
+      background-color: #f0f0f0;
     }
 
-    table th {
-      background-color: #f0f0f0;
+    .tabela-container td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
     }
 
     .checkbox-group {
@@ -581,7 +688,7 @@
 
     .checkbox-group label {
       background-color: #f0f0f0;
-      border: 1px solid var(--border-color);
+      border: 1px solid #ddd;
       border-radius: 6px;
       padding: 10px 16px;
       font-size: 0.95rem;
@@ -595,17 +702,34 @@
 
     .checkbox-group input[type="checkbox"] {
       transform: scale(1.2);
-      accent-color: var(--primary);
+      accent-color: #8B0000;
     }
 
     .file-upload {
-      border: 2px dashed var(--primary);
+      border: 2px dashed #8B0000;
       padding: 40px;
       text-align: center;
       border-radius: 12px;
       cursor: pointer;
-      color: var(--primary);
+      color: #8B0000;
       font-size: 1.1rem;
+    }
+
+    .visibilidade-select {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 6px;
+      background-color: #fff;
+      color: #333;
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23666' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 12px;
+      cursor: pointer;
     }
 
     #submitContentBtn {
@@ -623,10 +747,10 @@
 
     .graph-bar {
       height: 24px;
-      background: var(--primary);
+      background: #8B0000;
       margin: 6px 0;
       border-radius: 4px;
-      color: var(--text-light);
+      color: #fff;
       padding-left: 12px;
       display: flex;
       align-items: center;
@@ -635,8 +759,8 @@
     }
 
     .export-buttons button {
-      background-color: var(--primary);
-      color: var(--text-light);
+      background-color: #8B0000;
+      color: #fff;
       border: none;
       padding: 12px 18px;
       margin-right: 12px;
@@ -652,7 +776,7 @@
 
     .user-profile {
       background: #fff;
-      border: 1px solid var(--border-color);
+      border: 1px solid #ddd;
       padding: 35px;
       margin-bottom: 50px;
       border-radius: 10px;
@@ -670,13 +794,13 @@
       height: 110px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--primary);
+      border: 3px solid #8B0000;
     }
 
     .user-info h2 {
       margin: 0;
       font-size: 1.8rem;
-      color: var(--primary);
+      color: #8B0000;
     }
 
     .user-info p {
@@ -687,8 +811,8 @@
     }
 
     .user-actions button {
-      background-color: var(--primary);
-      color: var(--text-light);
+      background-color: #8B0000;
+      color: #fff;
       border: none;
       padding: 12px 20px;
       margin-right: 12px;
@@ -703,7 +827,7 @@
     }
 
     .btn-profile-style {
-      color: var(--text-light);
+      color: #fff;
       border: none;
       padding: 12px 20px;
       margin-right: 12px;
@@ -714,11 +838,11 @@
       transition: background-color 0.3s ease;
     }
 
-    .btn-profile-style:not(#approveBtn):not(#rejectBtn) {
+    .btn-profile-style:not(#approveBtn):not(#rejectBtn):not(#viewBtn):not(#downloadBtn):not(#deleteBtn) {
       background-color: #6c757d;
     }
 
-    .btn-profile-style:not(#approveBtn):not(#rejectBtn):hover {
+    .btn-profile-style:not(#approveBtn):not(#rejectBtn):not(#viewBtn):not(#downloadBtn):not(#deleteBtn):hover {
       background-color: #5a6268;
     }
 
@@ -738,11 +862,36 @@
       background-color: #c82333;
     }
 
+    #deleteBtn {
+      background-color: #dc3545;
+    }
+
+    #deleteBtn:hover {
+      background-color: #c82333;
+    }
+
+    #viewBtn {
+      background-color: #007bff;
+    }
+
+    #viewBtn:hover {
+      background-color: #0069d9;
+    }
+
+    #downloadBtn {
+      background-color: #20c997;
+    }
+
+    #downloadBtn:hover {
+      background-color: #17a589;
+    }
+
     .user-stats.cards {
       gap: 25px;
       flex-wrap: wrap;
       display: flex;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .last-access {
@@ -754,7 +903,7 @@
       list-style-type: disc;
       padding-left: 25px;
       font-weight: 600;
-      color: var(--primary);
+      color: #8B0000;
       font-size: 1.15rem;
     }
 
@@ -767,7 +916,7 @@
       width: 100%;
       padding: 10px;
       font-size: 1rem;
-      border: 1px solid var(--border-color);
+      border: 1px solid #ddd;
       border-radius: 6px;
       margin-top: 5px;
     }
@@ -780,7 +929,7 @@
     #metadadoInput {
       font-size: 1rem;
       padding: 8px;
-      border: 1px solid var(--border-color);
+      border: 1px solid #ddd;
       border-radius: 6px;
       margin-bottom: 10px;
     }
@@ -793,8 +942,8 @@
 
     .tag {
       background-color: #eee;
-      border: 1px solid var(--primary);
-      color: var(--primary);
+      border: 1px solid #8B0000;
+      color: #8B0000;
       padding: 6px 10px;
       border-radius: 20px;
       font-size: 0.9rem;
@@ -806,7 +955,7 @@
     .tag .remove-tag {
       background: none;
       border: none;
-      color: var(--primary);
+      color: #8B0000;
       cursor: pointer;
       font-weight: bold;
     }
