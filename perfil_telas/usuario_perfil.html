@@ -29,293 +29,296 @@
     </nav>
   </header>
 
-  <main class="user-page">
-    <section class="user-header">
-      <img src="../perfil_imagens/usuario_perfil.png" alt="Foto de Perfil" class="profile-pic" />
-      <div class="info-compact">
-        <h2>Fernanda Pereira Matos</h2>
-        <p data-i18n="universidade">Universidade Federal da Paraíba</p>
-        <p>fernanda_pereira@gmail.com</p>
-        <p data-i18n="formacao">Doutorado</p>
-        <p data-i18n="local">CA/Los Angeles (Estados Unidos da América)</p>
+  <div class="container">
 
-        <a href="./configuracoes_usuario.html"><button data-i18n="configuracoes">Configurações</button></a>
-        <a href="../inicio_principais_telas/login.html"><button data-i18n="sair">Sair</button></a>
-      </div>
-    </section>
-
-    <section class="dashboard">
-      <h3 data-i18n="painel_geral">Painel Geral</h3>
-      <div class="stats">
-        <div class="stat-box"><span data-i18n="contribuicoes_totais">Total de Contribuições</span><br /><strong>X</strong></div>
-        <div class="stat-box"><span data-i18n="contribuicoes_aprovadas">Contribuições Aprovadas</span><br /><strong>X</strong></div>
-        <div class="stat-box"><span data-i18n="contribuicoes_rejeitadas">Contribuições Rejeitadas</span><br /><strong>X</strong></div>
-        <div class="stat-box"><span data-i18n="contribuicoes_em_analise">Contribuições em Análise</span><br /><strong>X</strong></div>
-        <div class="stat-box"><span data-i18n="contribuicoes_solicitacao">Solicitações de Remoção/Alteração</span><br /><strong>X</strong></div>
-      </div>
-    </section>
-
-    <div class="section">
-      <h2 data-i18n="contentSubmission.title">Submissão de Conteúdo</h2>
-
-      <div class="upload-area">
-        <label for="titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
-        <input type="text" id="titulo" name="titulo" /><br /><br />
-
-        <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
-        <div id="author-input-group">
-          <input type="text" id="autorInput" placeholder="Digite o nome do autor" />
-          <button type="button" id="addAuthorBtn">Adicionar autor</button>
+    <main class="user-page">
+      <section class="user-header">
+        <img src="../perfil_imagens/usuario_perfil.png" alt="Foto de Perfil" class="profile-pic" />
+        <div class="info-compact">
+          <h2>Fernanda Pereira Matos</h2>
+          <p data-i18n="universidade">Universidade Federal da Paraíba</p>
+          <p>fernanda_pereira@gmail.com</p>
+          <p data-i18n="formacao">Doutorado</p>
+          <p data-i18n="local">CA/Los Angeles (Estados Unidos da América)</p>
+  
+          <a href="./configuracoes_usuario.html"><button data-i18n="configuracoes">Configurações</button></a>
+          <a href="../inicio_principais_telas/login.html"><button data-i18n="sair">Sair</button></a>
         </div>
-        <ul id="authorsList" style="margin-top: 10px; list-style: disc inside;"></ul><br />
-
-        <label data-i18n="contentSubmission.keywordLabel">Palavras-chave:</label><br />
-        <div class="checkbox-group" id="metadados-checkboxes">
-          <label><input type="checkbox" name="keyword" value="audio"> Áudio</label>
-          <label><input type="checkbox" name="keyword" value="tese"> Dissertação/Tese</label>
-          <label><input type="checkbox" name="keyword" value="documento"> Documento</label>
-          <label><input type="checkbox" name="keyword" value="entrevista"> Entrevista</label>
-          <label><input type="checkbox" name="keyword" value="imagem"> Imagem</label>
-          <label><input type="checkbox" name="keyword" value="livro"> Livro</label>
-          <label><input type="checkbox" name="keyword" value="periodico"> Periódico</label>
-          <label><input type="checkbox" name="keyword" value="video"> Vídeo</label>
-          <label><input type="checkbox" name="keyword" value="terriorio"> Território de Princesa Isabel</label>
-        </div><br />
-
-        <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
-          <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar um arquivo</strong><br /></p>
-          <input type="file" id="fileUpload" name="fileUpload" hidden />
-        </div><br />
-
-        <label for="annotation" data-i18n="contentSubmission.annotationsLabel">Anotações sobre o conteúdo:</label>
-        <textarea id="annotation" placeholder="Descreva o conteúdo ou observações importantes..."
-          data-i18n-placeholder="contentSubmission.annotationsPlaceholder"></textarea><br /><br />
-
-        <label for="visibility" class="visibilidade-label">Visibilidade:</label><br />
-        <select id="visibility" name="visibility" class="visibilidade-select">
-          <option value="censurado">Censurado - Conteúdo proibido para menores de idade</option>
-          <option value="completo">Completo - Acesso livre para todos</option>
-          <option value="analise">Análise - Conteúdo possivelmente nocivo</option>
-          <option value="referencia">Referência - Conteúdo bloqueado por direitos autorais, apenas referenciar</option>
-        </select><br /><br />
-
-        <button id="submitContentBtn" data-i18n="contentSubmission.submitButton">Enviar Conteúdo</button>
-      </div>
-    </div>
-
-    <section class="contribuicoes">
-      <h3 data-i18n="minhas_contribuicoes">Minhas Contribuições</h3>
-      
-      <div class="tabela-container">
-        <table>
-          <thead>
-            <tr>
-              <th data-i18n="titulo_col">Título</th>
-              <th data-i18n="status">Status</th>
-              <th data-i18n="data">Data</th>
-              <th data-i18n="acao">Ação</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>História Urbana de João Pessoa</td>
-              <td data-i18n="em_analise">Em Análise</td>
-              <td>15/05/2025</td>
-              <td>
-                <button data-i18n="visualizar">Visualizar</button>
-                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>A Revolta de Princesa</td>
-              <td data-i18n="rejeitado">Rejeitado</td>
-              <td>21/08/2025</td>
-              <td>
-                <button data-i18n="visualizar">Visualizar</button>
-                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Análise Sobre os Anos 30</td>
-              <td data-i18n="rejeitado">Rejeitado</td>
-              <td>22/08/2025</td>
-              <td>
-                <button data-i18n="visualizar">Visualizar</button>
-                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Um Estudo Sobre A Revolução de 1930</td>
-              <td data-i18n="em_analise">Em Análise</td>
-              <td>22/08/2025</td>
-              <td>
-                <button data-i18n="visualizar">Visualizar</button>
-                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Mapa Paraibano dos Anos 30</td>
-              <td data-i18n="Aprovado">Aprovado</td>
-              <td>22/08/2025</td>
-              <td>
-                <button data-i18n="visualizar">Visualizar</button>
-                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Filmagem em 1930</td>
-              <td data-i18n="Aprovado">Aprovado</td>
-              <td>22/08/2025</td>
-              <td>
-                <button data-i18n="visualizar">Visualizar</button>
-                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-
-      <div id="modalSolicitacao" class="modal-flutuante">
-        <div class="modal-conteudo">
-          <span class="fechar" onclick="fecharModal()">&times;</span>
-          <h3>Solicitação de Alteração ou Remoção</h3>
-          <textarea id="mensagemSolicitacao" placeholder="Descreva sua solicitação..." rows="5"></textarea>
-          <button onclick="enviarSolicitacao()">Enviar Solicitação de Alteração/Remoção</button>
+      </section>
+  
+      <section class="dashboard">
+        <h3 data-i18n="painel_geral">Painel Geral</h3>
+        <div class="stats">
+          <div class="stat-box"><span data-i18n="contribuicoes_totais">Total de Contribuições</span><br /><strong>X</strong></div>
+          <div class="stat-box"><span data-i18n="contribuicoes_aprovadas">Contribuições Aprovadas</span><br /><strong>X</strong></div>
+          <div class="stat-box"><span data-i18n="contribuicoes_rejeitadas">Contribuições Rejeitadas</span><br /><strong>X</strong></div>
+          <div class="stat-box"><span data-i18n="contribuicoes_em_analise">Contribuições em Análise</span><br /><strong>X</strong></div>
+          <div class="stat-box"><span data-i18n="contribuicoes_solicitacao">Solicitações de Remoção/Alteração</span><br /><strong>X</strong></div>
+        </div>
+      </section>
+  
+      <div class="section">
+        <h2 data-i18n="contentSubmission.title">Submissão de Conteúdo</h2>
+  
+        <div class="upload-area">
+          <label for="titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
+          <input type="text" id="titulo" name="titulo" /><br /><br />
+  
+          <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
+          <div id="author-input-group">
+            <input type="text" id="autorInput" placeholder="Digite o nome do autor" />
+            <button type="button" id="addAuthorBtn">Adicionar autor</button>
+          </div>
+          <ul id="authorsList" style="margin-top: 10px; list-style: disc inside;"></ul><br />
+  
+          <label data-i18n="contentSubmission.keywordLabel">Palavras-chave:</label><br />
+          <div class="checkbox-group" id="metadados-checkboxes">
+            <label><input type="checkbox" name="keyword" value="audio"> Áudio</label>
+            <label><input type="checkbox" name="keyword" value="tese"> Dissertação/Tese</label>
+            <label><input type="checkbox" name="keyword" value="documento"> Documento</label>
+            <label><input type="checkbox" name="keyword" value="entrevista"> Entrevista</label>
+            <label><input type="checkbox" name="keyword" value="imagem"> Imagem</label>
+            <label><input type="checkbox" name="keyword" value="livro"> Livro</label>
+            <label><input type="checkbox" name="keyword" value="periodico"> Periódico</label>
+            <label><input type="checkbox" name="keyword" value="video"> Vídeo</label>
+            <label><input type="checkbox" name="keyword" value="terriorio"> Território de Princesa Isabel</label>
+          </div><br />
+  
+          <div class="file-upload" onclick="document.getElementById('fileUpload').click()">
+            <p><strong data-i18n="contentSubmission.selectFile">Clique aqui para selecionar um arquivo</strong><br /></p>
+            <input type="file" id="fileUpload" name="fileUpload" hidden />
+          </div><br />
+  
+          <label for="annotation" data-i18n="contentSubmission.annotationsLabel">Anotações sobre o conteúdo:</label>
+          <textarea id="annotation" placeholder="Descreva o conteúdo ou observações importantes..."
+            data-i18n-placeholder="contentSubmission.annotationsPlaceholder"></textarea><br /><br />
+  
+          <label for="visibility" class="visibilidade-label">Visibilidade:</label><br />
+          <select id="visibility" name="visibility" class="visibilidade-select">
+            <option value="censurado">Censurado - Conteúdo proibido para menores de idade</option>
+            <option value="completo">Completo - Acesso livre para todos</option>
+            <option value="analise">Análise - Conteúdo possivelmente nocivo</option>
+            <option value="referencia">Referência - Conteúdo bloqueado por direitos autorais, apenas referenciar</option>
+          </select><br /><br />
+  
+          <button id="submitContentBtn" data-i18n="contentSubmission.submitButton">Enviar Conteúdo</button>
         </div>
       </div>
-    </section>
-
-    <section class="favoritos">
-      <h3 data-i18n="favoritos_lista_interesse">Favoritos / Lista de Interesse</h3>
-
-      <div class="tabela-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Título</th>
-              <th>Palavras-chave</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>História Urbana de João Pessoa</td>
-              <td>
-                <span class="tag" data-i18n="documento">Documento</span>
-                <span class="tag">.pdf</span>
-              </td>
-            </tr>
-            <tr>
-              <td>A Revolta de Princesa</td>
-              <td>
-                <span class="tag" data-i18n="imagem">Imagem</span>
-                <span class="tag">.jpg</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Análise Sobre os Anos 30</td>
-              <td>
-                <span class="tag" data-i18n="audio">Áudio</span>
-                <span class="tag">.mp3</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Um Estudo Sobre A Revolução de 1930</td>
-              <td>
-                <span class="tag" data-i18n="livro">Livro</span>
-                <span class="tag">.pdf</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Mapa Paraibano dos Anos 30</td>
-              <td>
-                <span class="tag" data-i18n="video">Vídeo</span>
-                <span class="tag">.mp4</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Filmagem em 1930</td>
-              <td>
-                <span class="tag" data-i18n="filme">Filme</span>
-                <span class="tag">.mkv</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </section>
-
-    <section class="historico">
-      <h3 data-i18n="historico_acesso_atividades">Histórico de Acesso / Atividades Recentes</h3>
-
-      <div class="tabela-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Título</th>
-              <th>Ação</th>
-              <th>Data</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>MEMÓRIAS DE 1930</td>
-              <td><span>Visualizou</span></td>
-              <td>01/06/2025</td>
-            </tr>
-            <tr>
-              <td>MÚSICA EM HOMENAGEM A JOÃO PESSOA</td>
-              <td><span>Baixou</span></td>
-              <td>31/05/2025</td>
-            </tr>
-            <tr>
-              <td>TELEGRAMA 310</td>
-              <td><span>Visualizou</span></td>
-              <td>31/05/2025</td>
-            </tr>
-            <tr>
-              <td>ENTREVISTA 01 - PROFA. MONIQUE CITTADINO</td>
-              <td><span>Visualizou</span></td>
-              <td>31/05/2025</td>
-            </tr>
-            <tr>
-              <td>RETRATO DE JOÃO PESSOA</td>
-              <td><span>Visualizou</span></td>
-              <td>31/05/2025</td>
-            </tr>
-            <tr>
-              <td>O ANO DO NEGO</td>
-              <td><span>Baixou</span></td>
-              <td>31/05/2025</td>
-            </tr>
-            <tr>
-              <td>O DIA DA REVOLUÇÃO</td>
-              <td><span>Baixou</span></td>
-              <td>31/05/2025</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </section>
-
-    <section class="colecoes">
-      <div>
-        <h3>Criar Nova Coleção Personalizada</h3>
-        <input type="text" id="nomeColecao" placeholder="Nome da nova coleção" />
-        <button onclick="criarColecao()">Criar Coleção</button>
-      </div>
-
-      <div id="colecoesContainer"></div>
-    </section>
-  </main>
-
+  
+      <section class="contribuicoes">
+        <h3 data-i18n="minhas_contribuicoes">Minhas Contribuições</h3>
+        
+        <div class="tabela-container">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="titulo_col">Título</th>
+                <th data-i18n="status">Status</th>
+                <th data-i18n="data">Data</th>
+                <th data-i18n="acao">Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>História Urbana de João Pessoa</td>
+                <td data-i18n="em_analise">Em Análise</td>
+                <td>15/05/2025</td>
+                <td>
+                  <button data-i18n="visualizar">Visualizar</button>
+                  <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+                </td>
+              </tr>
+  
+              <tr>
+                <td>A Revolta de Princesa</td>
+                <td data-i18n="rejeitado">Rejeitado</td>
+                <td>21/08/2025</td>
+                <td>
+                  <button data-i18n="visualizar">Visualizar</button>
+                  <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+                </td>
+              </tr>
+  
+              <tr>
+                <td>Análise Sobre os Anos 30</td>
+                <td data-i18n="rejeitado">Rejeitado</td>
+                <td>22/08/2025</td>
+                <td>
+                  <button data-i18n="visualizar">Visualizar</button>
+                  <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+                </td>
+              </tr>
+  
+              <tr>
+                <td>Um Estudo Sobre A Revolução de 1930</td>
+                <td data-i18n="em_analise">Em Análise</td>
+                <td>22/08/2025</td>
+                <td>
+                  <button data-i18n="visualizar">Visualizar</button>
+                  <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+                </td>
+              </tr>
+  
+              <tr>
+                <td>Mapa Paraibano dos Anos 30</td>
+                <td data-i18n="Aprovado">Aprovado</td>
+                <td>22/08/2025</td>
+                <td>
+                  <button data-i18n="visualizar">Visualizar</button>
+                  <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+                </td>
+              </tr>
+  
+              <tr>
+                <td>Filmagem em 1930</td>
+                <td data-i18n="Aprovado">Aprovado</td>
+                <td>22/08/2025</td>
+                <td>
+                  <button data-i18n="visualizar">Visualizar</button>
+                  <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+                </td>
+              </tr>
+  
+            </tbody>
+          </table>
+        </div>
+  
+        <div id="modalSolicitacao" class="modal-flutuante">
+          <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <h3>Solicitação de Alteração ou Remoção</h3>
+            <textarea id="mensagemSolicitacao" placeholder="Descreva sua solicitação..." rows="5"></textarea>
+            <button onclick="enviarSolicitacao()">Enviar Solicitação de Alteração/Remoção</button>
+          </div>
+        </div>
+      </section>
+  
+      <section class="favoritos">
+        <h3 data-i18n="favoritos_lista_interesse">Favoritos / Lista de Interesse</h3>
+  
+        <div class="tabela-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Palavras-chave</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>História Urbana de João Pessoa</td>
+                <td>
+                  <span class="tag" data-i18n="documento">Documento</span>
+                  <span class="tag">.pdf</span>
+                </td>
+              </tr>
+              <tr>
+                <td>A Revolta de Princesa</td>
+                <td>
+                  <span class="tag" data-i18n="imagem">Imagem</span>
+                  <span class="tag">.jpg</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Análise Sobre os Anos 30</td>
+                <td>
+                  <span class="tag" data-i18n="audio">Áudio</span>
+                  <span class="tag">.mp3</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Um Estudo Sobre A Revolução de 1930</td>
+                <td>
+                  <span class="tag" data-i18n="livro">Livro</span>
+                  <span class="tag">.pdf</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Mapa Paraibano dos Anos 30</td>
+                <td>
+                  <span class="tag" data-i18n="video">Vídeo</span>
+                  <span class="tag">.mp4</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Filmagem em 1930</td>
+                <td>
+                  <span class="tag" data-i18n="filme">Filme</span>
+                  <span class="tag">.mkv</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </section>
+  
+      <section class="historico">
+        <h3 data-i18n="historico_acesso_atividades">Histórico de Acesso / Atividades Recentes</h3>
+  
+        <div class="tabela-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Ação</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MEMÓRIAS DE 1930</td>
+                <td><span>Visualizou</span></td>
+                <td>01/06/2025</td>
+              </tr>
+              <tr>
+                <td>MÚSICA EM HOMENAGEM A JOÃO PESSOA</td>
+                <td><span>Baixou</span></td>
+                <td>31/05/2025</td>
+              </tr>
+              <tr>
+                <td>TELEGRAMA 310</td>
+                <td><span>Visualizou</span></td>
+                <td>31/05/2025</td>
+              </tr>
+              <tr>
+                <td>ENTREVISTA 01 - PROFA. MONIQUE CITTADINO</td>
+                <td><span>Visualizou</span></td>
+                <td>31/05/2025</td>
+              </tr>
+              <tr>
+                <td>RETRATO DE JOÃO PESSOA</td>
+                <td><span>Visualizou</span></td>
+                <td>31/05/2025</td>
+              </tr>
+              <tr>
+                <td>O ANO DO NEGO</td>
+                <td><span>Baixou</span></td>
+                <td>31/05/2025</td>
+              </tr>
+              <tr>
+                <td>O DIA DA REVOLUÇÃO</td>
+                <td><span>Baixou</span></td>
+                <td>31/05/2025</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+      </section>
+  
+      <section class="colecoes">
+        <div>
+          <h3>Criar Nova Coleção Personalizada</h3>
+          <input type="text" id="nomeColecao" placeholder="Nome da nova coleção" />
+          <button onclick="criarColecao()">Criar Coleção</button>
+        </div>
+  
+        <div id="colecoesContainer"></div>
+      </section>
+    </main>
+  </div>
+    
   <footer class="footer-section">
     <p data-i18n="footer.database">Base de Dados - BR 1930</p>
     <p data-i18n="footer.rights">Todos os Direitos Reservados</p>
@@ -579,11 +582,17 @@
   <style>
     html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Georgia', serif;
       color: #333;
       background-color: #fff;
       line-height: 1.9;
       font-size: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100%;
     }
 
     header {
@@ -652,9 +661,17 @@
     }
 
     main.user-page {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      padding: 50px 80px;
+      box-sizing: border-box;
     }
 
     .user-header {
@@ -1203,4 +1220,5 @@
       text-decoration: none;
     }
   </style>
+
 
