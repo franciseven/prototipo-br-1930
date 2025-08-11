@@ -448,47 +448,100 @@
 
     const colecoes = {};
 
-    function criarColecao() {
-      const nome = document.getElementById("nomeColecao").value.trim();
-      if (!nome) {
-        alert("Por favor, insira um nome para a coleção.");
-        return;
-      }
+      const colecoesContainer = document.getElementById("colecoesContainer");
 
-      if (colecoes[nome]) {
-        alert("Já existe uma coleção com esse nome.");
-        return;
-      }
+      window.criarColecao = function () {
+        const nome = document.getElementById("nomeColecao").value.trim();
+        if (!nome) {
+          alert("Por favor, insira um nome para a coleção.");
+          return;
+        }
 
-      colecoes[nome] = [];
+        if (colecoes[nome]) {
+          alert("Já existe uma coleção com esse nome.");
+          return;
+        }
 
-      const container = document.getElementById("colecoesContainer");
+        colecoes[nome] = [];
 
-      const novaColecao = document.createElement("div");
-      novaColecao.className = "colecao";
-      novaColecao.innerHTML = `
-        <h4>${nome}</h4>
-        <ul id="lista-${nome}"></ul>
-        <input type="text" placeholder="Nome do documento" id="doc-${nome}" />
-        <button onclick="adicionarDocumento('${nome}')">Adicionar Documento</button>
-      `;
+        const novaColecao = document.createElement("div");
+        novaColecao.className = "colecao";
+        novaColecao.id = `colecao-${nome}`;
 
-      container.appendChild(novaColecao);
-      document.getElementById("nomeColecao").value = "";
-    }
+        const h4 = document.createElement("h4");
+        h4.textContent = nome;
 
-    function adicionarDocumento(nomeColecao) {
-      const input = document.getElementById(`doc-${nomeColecao}`);
-      const docNome = input.value.trim();
-      if (!docNome) return;
+        const btnExcluirColecao = document.createElement("button");
+        btnExcluirColecao.textContent = "×";
+        btnExcluirColecao.title = "Remover coleção";
+        btnExcluirColecao.style.marginLeft = "8px";
+        btnExcluirColecao.style.color = "red";
+        btnExcluirColecao.style.border = "none";
+        btnExcluirColecao.style.background = "transparent";
+        btnExcluirColecao.style.cursor = "pointer";
 
-      const lista = document.getElementById(`lista-${nomeColecao}`);
-      const item = document.createElement("li");
-      item.textContent = docNome;
-      lista.appendChild(item);
-      input.value = "";
-      colecoes[nomeColecao].push(docNome);
-    }
+        btnExcluirColecao.addEventListener("click", () => {
+          if (confirm(`Tem certeza que deseja excluir a coleção "${nome}" e todos seus documentos?`)) {
+            delete colecoes[nome];
+            novaColecao.remove();
+          }
+        });
+
+        h4.appendChild(btnExcluirColecao);
+        novaColecao.appendChild(h4);
+
+        const ul = document.createElement("ul");
+        ul.id = `lista-${nome}`;
+        novaColecao.appendChild(ul);
+
+        const inputDoc = document.createElement("input");
+        inputDoc.type = "text";
+        inputDoc.placeholder = "Nome do documento";
+        inputDoc.id = `doc-${nome}`;
+        novaColecao.appendChild(inputDoc);
+
+        const btnAddDoc = document.createElement("button");
+        btnAddDoc.textContent = "Adicionar Documento";
+        btnAddDoc.addEventListener("click", () => adicionarDocumento(nome));
+        novaColecao.appendChild(btnAddDoc);
+
+        colecoesContainer.appendChild(novaColecao);
+        document.getElementById("nomeColecao").value = "";
+      };
+
+      window.adicionarDocumento = function (nomeColecao) {
+        const input = document.getElementById(`doc-${nomeColecao}`);
+        const docNome = input.value.trim();
+        if (!docNome) return;
+
+        const lista = document.getElementById(`lista-${nomeColecao}`);
+
+        const item = document.createElement("li");
+        item.textContent = docNome;
+
+        const btnExcluirDoc = document.createElement("button");
+        btnExcluirDoc.textContent = "×";
+        btnExcluirDoc.title = "Remover documento";
+        btnExcluirDoc.style.marginLeft = "8px";
+        btnExcluirDoc.style.color = "red";
+        btnExcluirDoc.style.border = "none";
+        btnExcluirDoc.style.background = "transparent";
+        btnExcluirDoc.style.cursor = "pointer";
+
+        btnExcluirDoc.addEventListener("click", () => {
+          if (confirm(`Excluir o documento "${docNome}" da coleção "${nomeColecao}"?`)) {
+            const idx = colecoes[nomeColecao].indexOf(docNome);
+            if (idx > -1) colecoes[nomeColecao].splice(idx, 1);
+            item.remove();
+          }
+        });
+
+        item.appendChild(btnExcluirDoc);
+        lista.appendChild(item);
+
+        colecoes[nomeColecao].push(docNome);
+        input.value = "";
+      };
 
     function abrirModal() {
       document.getElementById('modalSolicitacao').style.display = 'flex';
@@ -1150,3 +1203,4 @@
       text-decoration: none;
     }
   </style>
+
