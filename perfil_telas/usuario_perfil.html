@@ -47,11 +47,11 @@
     <section class="dashboard">
       <h3 data-i18n="painel_geral">Painel Geral</h3>
       <div class="stats">
-        <div class="stat-box"><span data-i18n="contribuicoes_totais">Contribuições Totais</span><br /><strong>X</strong></div>
-        <div class="stat-box"><span data-i18n="aprovadas">Aprovadas</span><br /><strong>X</strong></div>
-        <div class="stat-box"><span data-i18n="rejeitadas">Rejeitadas</span><br /><strong>X</strong></div>
-        <div class="stat-box"><span data-i18n="em_analise">Em Análise</span><br /><strong>X</strong></div>
-        <div class="stat-box"><span data-i18n="ultimo_acesso">Último Acesso</span><br /><strong>01/06/2025</strong></div>
+        <div class="stat-box"><span data-i18n="contribuicoes_totais">Total de Contribuições</span><br /><strong>X</strong></div>
+        <div class="stat-box"><span data-i18n="contribuicoes_aprovadas">Contribuições Aprovadas</span><br /><strong>X</strong></div>
+        <div class="stat-box"><span data-i18n="contribuicoes_rejeitadas">Contribuições Rejeitadas</span><br /><strong>X</strong></div>
+        <div class="stat-box"><span data-i18n="contribuicoes_em_analise">Contribuições em Análise</span><br /><strong>X</strong></div>
+        <div class="stat-box"><span data-i18n="contribuicoes_solicitacao">Solicitações de Remoção/Alteração</span><br /><strong>X</strong></div>
       </div>
     </section>
 
@@ -60,7 +60,7 @@
 
       <div class="upload-area">
         <label for="titulo" data-i18n="contentSubmission.titleLabel">Título:</label><br />
-        <input type="text" id="titulo" name="titulo" required /><br /><br />
+        <input type="text" id="titulo" name="titulo" /><br /><br />
 
         <label data-i18n="contentSubmission.authorLabel">Autor(a):</label><br />
         <div id="author-input-group">
@@ -91,70 +91,228 @@
         <textarea id="annotation" placeholder="Descreva o conteúdo ou observações importantes..."
           data-i18n-placeholder="contentSubmission.annotationsPlaceholder"></textarea><br /><br />
 
+        <label for="visibility" class="visibilidade-label">Visibilidade:</label><br />
+        <select id="visibility" name="visibility" class="visibilidade-select">
+          <option value="censurado">Censurado - Conteúdo proibido para menores de idade</option>
+          <option value="completo">Completo - Acesso livre para todos</option>
+          <option value="analise">Análise - Conteúdo possivelmente nocivo</option>
+          <option value="referencia">Referência - Conteúdo bloqueado por direitos autorais, apenas referenciar</option>
+        </select><br /><br />
+
         <button id="submitContentBtn" data-i18n="contentSubmission.submitButton">Enviar Conteúdo</button>
       </div>
     </div>
 
     <section class="contribuicoes">
       <h3 data-i18n="minhas_contribuicoes">Minhas Contribuições</h3>
-      <table>
-        <thead>
-          <tr>
-            <th data-i18n="titulo_col">Título</th>
-            <th data-i18n="documentos">Documentos</th>
-            <th data-i18n="status">Status</th>
-            <th data-i18n="data">Data</th>
-            <th data-i18n="acoes">Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>História Urbana de João Pessoa</td>
-            <td data-i18n="artigo">Artigo</td>
-            <td data-i18n="em_analise">Em análise</td>
-            <td>15/05/2025</td>
-            <td>
-              <button data-i18n="visualizar">Visualizar</button>
-              <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
-            </td>
-          </tr>
-        </tbody>
-        
-          <div id="modalSolicitacao" class="modal-flutuante">
-            <div class="modal-conteudo">
-              <span class="fechar" onclick="fecharModal()">&times;</span>
-              <h3>Solicitação de Alteração ou Remoção</h3>
-              <textarea id="mensagemSolicitacao" placeholder="Descreva sua solicitação..." rows="5"></textarea>
-              <button onclick="enviarSolicitacao()">Enviar Solicitação de Alteração/Remoção</button>
-            </div>
-          </div>
-        
-      </table>
+      
+      <div class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="titulo_col">Título</th>
+              <th data-i18n="status">Status</th>
+              <th data-i18n="data">Data</th>
+              <th data-i18n="acao">Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>História Urbana de João Pessoa</td>
+              <td data-i18n="em_analise">Em Análise</td>
+              <td>15/05/2025</td>
+              <td>
+                <button data-i18n="visualizar">Visualizar</button>
+                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>A Revolta de Princesa</td>
+              <td data-i18n="rejeitado">Rejeitado</td>
+              <td>21/08/2025</td>
+              <td>
+                <button data-i18n="visualizar">Visualizar</button>
+                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Análise Sobre os Anos 30</td>
+              <td data-i18n="rejeitado">Rejeitado</td>
+              <td>22/08/2025</td>
+              <td>
+                <button data-i18n="visualizar">Visualizar</button>
+                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Um Estudo Sobre A Revolução de 1930</td>
+              <td data-i18n="em_analise">Em Análise</td>
+              <td>22/08/2025</td>
+              <td>
+                <button data-i18n="visualizar">Visualizar</button>
+                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Mapa Paraibano dos Anos 30</td>
+              <td data-i18n="Aprovado">Aprovado</td>
+              <td>22/08/2025</td>
+              <td>
+                <button data-i18n="visualizar">Visualizar</button>
+                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Filmagem em 1930</td>
+              <td data-i18n="Aprovado">Aprovado</td>
+              <td>22/08/2025</td>
+              <td>
+                <button data-i18n="visualizar">Visualizar</button>
+                <button class="info-btn" onclick="abrirModal()" title="Solicitar alteração/remoção">ℹ</button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="modalSolicitacao" class="modal-flutuante">
+        <div class="modal-conteudo">
+          <span class="fechar" onclick="fecharModal()">&times;</span>
+          <h3>Solicitação de Alteração ou Remoção</h3>
+          <textarea id="mensagemSolicitacao" placeholder="Descreva sua solicitação..." rows="5"></textarea>
+          <button onclick="enviarSolicitacao()">Enviar Solicitação de Alteração/Remoção</button>
+        </div>
+      </div>
     </section>
 
     <section class="favoritos">
       <h3 data-i18n="favoritos_lista_interesse">Favoritos / Lista de Interesse</h3>
 
-      <ul>
-        <li>Arquivo A <span class="tag" data-i18n="documento">Documento</span> <span class="tag">.pdf</span></li>
-        <li>Arquivo B <span class="tag" data-i18n="imagem">Imagem</span> <span class="tag">.jpg</span></li>
-      </ul>
+      <div class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Palavras-chave</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>História Urbana de João Pessoa</td>
+              <td>
+                <span class="tag" data-i18n="documento">Documento</span>
+                <span class="tag">.pdf</span>
+              </td>
+            </tr>
+            <tr>
+              <td>A Revolta de Princesa</td>
+              <td>
+                <span class="tag" data-i18n="imagem">Imagem</span>
+                <span class="tag">.jpg</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Análise Sobre os Anos 30</td>
+              <td>
+                <span class="tag" data-i18n="audio">Áudio</span>
+                <span class="tag">.mp3</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Um Estudo Sobre A Revolução de 1930</td>
+              <td>
+                <span class="tag" data-i18n="livro">Livro</span>
+                <span class="tag">.pdf</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Mapa Paraibano dos Anos 30</td>
+              <td>
+                <span class="tag" data-i18n="video">Vídeo</span>
+                <span class="tag">.mp4</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Filmagem em 1930</td>
+              <td>
+                <span class="tag" data-i18n="filme">Filme</span>
+                <span class="tag">.mkv</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
+    </section>
+
+    <section class="historico">
+      <h3 data-i18n="historico_acesso_atividades">Histórico de Acesso / Atividades Recentes</h3>
+
+      <div class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Ação</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MEMÓRIAS DE 1930</td>
+              <td><span>Visualizou</span></td>
+              <td>01/06/2025</td>
+            </tr>
+            <tr>
+              <td>MÚSICA EM HOMENAGEM A JOÃO PESSOA</td>
+              <td><span>Baixou</span></td>
+              <td>31/05/2025</td>
+            </tr>
+            <tr>
+              <td>TELEGRAMA 310</td>
+              <td><span>Visualizou</span></td>
+              <td>31/05/2025</td>
+            </tr>
+            <tr>
+              <td>ENTREVISTA 01 - PROFA. MONIQUE CITTADINO</td>
+              <td><span>Visualizou</span></td>
+              <td>31/05/2025</td>
+            </tr>
+            <tr>
+              <td>RETRATO DE JOÃO PESSOA</td>
+              <td><span>Visualizou</span></td>
+              <td>31/05/2025</td>
+            </tr>
+            <tr>
+              <td>O ANO DO NEGO</td>
+              <td><span>Baixou</span></td>
+              <td>31/05/2025</td>
+            </tr>
+            <tr>
+              <td>O DIA DA REVOLUÇÃO</td>
+              <td><span>Baixou</span></td>
+              <td>31/05/2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    <section class="colecoes">
       <div>
-        <h3>Criar nova coleção personalizada</h3>
+        <h3>Criar Nova Coleção Personalizada</h3>
         <input type="text" id="nomeColecao" placeholder="Nome da nova coleção" />
         <button onclick="criarColecao()">Criar Coleção</button>
       </div>
 
       <div id="colecoesContainer"></div>
-    </section>
-
-    <section class="historico">
-      <h3 data-i18n="historico_acesso_atividades">Histórico de Acesso / Atividades Recentes</h3>
-      <ul>
-        <li data-i18n="visualizou">Visualizou: "Memórias de 1930" em 01/06/2025</li>
-        <li data-i18n="baixou">Baixou: "Mapa da Paraíba (1930)" em 31/05/2025</li>
-      </ul>
     </section>
   </main>
 
@@ -239,8 +397,9 @@
         const titulo = document.getElementById("titulo").value.trim();
         const anotacoes = document.getElementById("annotation").value.trim();
         const arquivo = fileInput.files[0];
+        const visibilidade = document.getElementById("visibility").options[document.getElementById("visibility").selectedIndex].text;
 
-        const metadadosSelecionados = Array.from(document.querySelectorAll("input[name='metadados']:checked"))
+        const metadadosSelecionados = Array.from(document.querySelectorAll("input[name='keyword']:checked"))
           .map(checkbox => checkbox.value);
 
         if (!titulo) {
@@ -268,16 +427,20 @@
           autores: authors,
           anotacoes,
           metadados: metadadosSelecionados,
+          visibilidade,
           arquivo
         };
 
         console.log("Dados a enviar:", dados);
 
         alert(
-          `Conteúdo enviado com sucesso!\n\n` +
+          `Conteúdo enviado com sucesso para os administradores para revisão!\n\n` +
+          `Observação: O seu conteúdo será enviado para a plataforma apenas após aprovação do administrador!!!\n\n` +
           `Título: ${titulo}\n` +
           `Autores: ${authors.join(", ")}\n` +
           `Anotações: ${anotacoes ? anotacoes : 'Nenhuma anotação'}\n` +
+          `Metadados: ${metadadosSelecionados.join(", ")}\n` +
+          `Visibilidade: ${visibilidade}\n` +
           `Arquivo enviado: ${arquivo.name}`
         );
       });
@@ -361,15 +524,6 @@
 
 
   <style>
-    :root {
-      --primary: #8B0000;
-      --accent: #F5F5F5;
-      --text-dark: #222;
-      --text-light: #fff;
-      --border-color: #ddd;
-      --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
     html, body {
       margin: 0;
       font-family: 'Georgia', serif;
@@ -456,7 +610,7 @@
       display: flex;
       align-items: center;
       border-radius: 12px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       gap: 40px;
       margin-bottom: 60px;
     }
@@ -466,7 +620,7 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--primary);
+      border: 4px solid #8B0000;
     }
 
     .user-header h2 {
@@ -483,7 +637,7 @@
     .user-header button {
       margin-right: 15px;
       padding: 12px 20px;
-      background-color: var(--primary);
+      background-color: #8B0000;
       color: white;
       border: none;
       border-radius: 6px;
@@ -503,9 +657,9 @@
     .section h2 {
       font-size: 2rem;
       margin-bottom: 20px;
-      border-bottom: 3px solid var(--primary);
+      border-bottom: 3px solid #8B0000;
       padding-bottom: 6px;
-      color: var(--primary);
+      color: #8B0000;
     }
 
     .upload-area input[type="text"],
@@ -513,7 +667,7 @@
       width: 100%;
       padding: 10px;
       font-size: 1rem;
-      border: 1px solid var(--border-color);
+      border: 1px solid #ddd;
       border-radius: 6px;
       margin-top: 5px;
     }
@@ -527,7 +681,7 @@
 
     .checkbox-group label {
       background-color: #f0f0f0;
-      border: 1px solid var(--border-color);
+      border: 1px solid #ddd;
       border-radius: 6px;
       padding: 10px 16px;
       font-size: 0.95rem;
@@ -541,17 +695,33 @@
 
     .checkbox-group input[type="checkbox"] {
       transform: scale(1.2);
-      accent-color: var(--primary);
+      accent-color: #8B0000;
     }
 
     .file-upload {
-      border: 2px dashed var(--primary);
+      border: 2px dashed #8B0000;
       padding: 40px;
       text-align: center;
       border-radius: 12px;
       cursor: pointer;
-      color: var(--primary);
+      color: #8B0000;
       font-size: 1.1rem;
+    }
+
+    .visibilidade-select {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 6px;
+      background-color: #fff;
+      color: #333;
+      appearance: none;
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 12px;
+      cursor: pointer;
     }
 
     #submitContentBtn {
@@ -567,13 +737,27 @@
       user-select: none;
     }
 
-    .dashboard h3,
-    .contribuicoes h3,
-    .favoritos h3,
-    .historico h3 {
-      margin-bottom: 20px;
-      font-size: 1.7rem;
-      color: var(--primary);
+    .tabela-container {
+      max-height: 350px;
+      overflow-y: auto;
+      display: block;
+    }
+
+    .tabela-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .tabela-container th {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .tabela-container td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: center;
     }
 
     .info-btn {
@@ -673,14 +857,14 @@
       min-width: 240px;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
     }
 
     .stat-box strong {
       font-size: 1.7rem;
-      color: var(--primary);
+      color: #8B0000;
       display: block;
       margin-top: 10px;
     }
@@ -691,7 +875,7 @@
       border-collapse: collapse;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       margin-bottom: 40px;
       font-size: 1.1rem;
     }
@@ -700,17 +884,17 @@
     table td {
       padding: 18px;
       text-align: left;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid #ddd;
     }
 
     table th {
-      background-color: var(--accent);
+      background-color: #F5F5F5;
     }
 
     table td button {
       padding: 10px 16px;
       margin: 0 6px;
-      background-color: var(--primary);
+      background-color: #8B0000;
       color: white;
       border: none;
       border-radius: 5px;
@@ -722,12 +906,65 @@
       background-color: #a32020;
     }
 
+    .dashboard h3,
+    .contribuicoes h3,
+    .favoritos h3,
+    .historico h3,
+    .colecoes h3 {
+      margin-bottom: 20px;
+      font-size: 1.7rem;
+      color: #8B0000;
+    }
+
     .favoritos ul,
     .historico ul {
+      background-color: #fff;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      list-style: none;
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+      scrollbar-width: thin;
+      scrollbar-color: #ccc transparent;
+    }
+
+    .favoritos ul::-webkit-scrollbar,
+    .historico ul::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .favoritos ul::-webkit-scrollbar-thumb,
+    .historico ul::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+
+    .favoritos li,
+    .historico li {
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s;
+    }
+
+    .favoritos li:last-child,
+    .historico li:last-child {
+      border-bottom: none;
+    }
+
+    .favoritos li:hover,
+    .historico li:hover {
+      background-color: #f9f9f9;
+    }
+
+    .favoritos ul,
+    .historico ul {
+      max-height: 300px;
+      overflow-y: auto;
       background-color: white;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       list-style: none;
       margin-bottom: 50px;
       font-size: 1.1rem;
@@ -739,53 +976,10 @@
       border-bottom: 1px solid #eee;
     }
 
-    .favoritos input[type="text"] {
-      padding: 8px 12px;
-      margin-top: 10px;
-      margin-right: 10px;
-      font-size: 1rem;
-      border: 1px solid #aaa;
-      border-radius: 6px;
-    }
-
-    .favoritos button {
-      padding: 8px 16px;
-      background-color: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .favoritos button:hover {
-      background-color: #a32020;
-    }
-
-    .favoritos .colecao {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .favoritos .colecao h4 {
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-
-    .favoritos .colecao ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-bottom: 10px;
-    }
-
     .tag {
-      background-color: var(--tag-bg);
-      color: var(--primary);
-      border: 1px solid var(--primary);
+      background-color: #e1e7f0;
+      color: #5a7391;
+      border: 1px solid #5a7391;
       border-radius: 20px;
       padding: 5px 14px;
       margin: 5px 6px;
@@ -794,6 +988,118 @@
       user-select: none;
       cursor: default;
       transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .tag:hover {
+      background-color: #0000EE;
+      color: white;
+      border-color: #0000EE;
+    }
+
+    .colecoes {
+      background-color: #fff;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-top: 25px;
+      font-size: 1.1rem;
+    }
+
+    .colecoes > h4 {
+      margin-bottom: 20px;
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #8B0000;
+    }
+
+    .colecoes ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .colecoes ul::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .colecoes ul::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+
+    .colecoes input[type="text"],
+    .colecao input[type="text"] {
+      padding: 8px 12px;
+      margin-top: 10px;
+      margin-right: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #fafafa;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .colecoes input[type="text"]:focus,
+    .colecao input[type="text"]:focus {
+      border-color: #8B0000;
+      outline: none;
+      background-color: #fff;
+    }
+
+    .colecoes button,
+    .colecao button {
+      padding: 8px 16px;
+      background-color: #8B0000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.1s ease;
+    }
+
+    .colecoes button:hover,
+    .colecao button:hover {
+      background-color: #a32020;
+      transform: scale(1.03);
+    }
+
+    .colecao {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .colecao h4 {
+      margin-bottom: 10px;
+      color: #8B0000;
+      font-size: 1.3rem;
+    }
+
+    .colecao ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .colecao li {
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .colecao li:last-child {
+      border-bottom: none;
+    }
+
+    .footer-section {
+      background-color: #e87474e9;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 1.2rem;
     }
 
     .footer-section {
