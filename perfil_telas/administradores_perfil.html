@@ -552,7 +552,7 @@
       display: flex;
       flex-direction: column;
       font-family: 'Georgia', serif;
-      font-size: 18px;
+      font-size: 1.25rem;
       color: #222;
       background-color: #fff;
       line-height: 1.6;
@@ -620,6 +620,12 @@
     }
 
     .container {
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
       padding: 50px 80px;
     }
 
@@ -725,7 +731,6 @@
       background-color: #fff;
       color: #333;
       appearance: none;
-      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23666' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 12px center;
       background-size: 12px;
@@ -777,6 +782,7 @@
     .user-profile {
       background: #fff;
       border: 1px solid #ddd;
+      box-sizing: border-box;
       padding: 35px;
       margin-bottom: 50px;
       border-radius: 10px;
@@ -1008,3 +1014,4 @@
       text-decoration: none;
     }
   </style>
+
