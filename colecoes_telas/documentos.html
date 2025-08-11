@@ -116,17 +116,19 @@
     <div class="lista-itens">
 
       <div class="item">
-        <img src="../capas_colecoes/documentos/capa_documento_1-telegrama.png" alt="Capa do Documento 1" />
-        <div class="item-info">
-          <div class="item-tag">Documento</div>
-          <h3><a href="../itens_selecionados_telas/documento_1_selecionado.html" style="text-decoration: none; color: inherit;">TELEGRAMA 313</a></h3>
-          <p class="autor">Acervo FCJA</p>
-          <p class="descricao collapsed">
-            Telegrama de José Fábio da Costa Lyra, secretário da cidade de Bananeiras-PB, comunicando ao Chefe do Governo Revolucionário (José Américo de Almeida) acerca da adesão do coronel José Antônio Ferreira da Rocha e de sua família aos ideias revolucionários.
-          </p>
-          <a href="#" class="toggle-descricao">Mostrar mais</a>
+          <a href="../itens_selecionados_telas/documento_1_selecionado.html">
+            <img src="../capas_colecoes/documentos/capa_documento_1-telegrama.png" alt="Capa do Documento 1" />
+          </a>
+          <div class="item-info">
+            <div class="item-tag">Documento</div>
+            <h3><a href="../itens_selecionados_telas/documento_1_selecionado.html" style="text-decoration: none; color: inherit;">TELEGRAMA 313</a></h3>
+            <p class="autor">Acervo FCJA</p>
+            <p class="descricao collapsed">
+              Telegrama de José Fábio da Costa Lyra, secretário da cidade de Bananeiras-PB, comunicando ao Chefe do Governo Revolucionário (José Américo de Almeida) acerca da adesão do coronel José Antônio Ferreira da Rocha e de sua família aos ideias revolucionários.
+            </p>
+            <a href="#" class="toggle-descricao">Mostrar mais</a>
+          </div>
         </div>
-      </div>
 
     </div>
 
@@ -466,9 +468,13 @@
     }
 
     .item-info .autor {
-      font-size: 1.1rem;
-      font-weight: bold;
-      margin-bottom: 10px;
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 8px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      max-width: 100%;
+      text-align: justify;
     }
 
     .item-info .descricao {
@@ -576,4 +582,5 @@
       text-decoration: none;
     }
   </style>
+
 
