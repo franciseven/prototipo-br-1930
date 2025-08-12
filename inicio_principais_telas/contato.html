@@ -35,13 +35,81 @@
   <div class="container">
     <div class="contact-form">
       <h2 data-i18n="entre_contato">Entre em contato</h2>
-      <form>
-        <input type="text" placeholder="Digite o seu nome" data-i18n-placeholder="nome" required />
-        <input type="email" placeholder="Digite o seu e-mail" data-i18n-placeholder="email" required />
-        <input type="text" placeholder="Digite a sua cidade" data-i18n-placeholder="cidade" />
-        <input type="text" placeholder="Digite o seu estado" data-i18n-placeholder="estado" />
-        <input type="text" placeholder="Digite o seu país" data-i18n-placeholder="pais" />
+      <p style="color: #c00; margin-bottom: 1.5em;">
+        Os campos marcados com <span style="color: #c00;">*</span> são obrigatórios.
+      </p>
+      <form id="cadastro-form">
 
+        <label for="nome-completo" class="custom-label">
+          <span data-i18n="nome_completo">Nome Completo</span> <span style="color: #c00;">*</span>
+        </label>
+        <input type="text" id="nome-completo" name="nome-completo" data-i18n-placeholder="nome_completo" required>
+
+        <label for="data-nascimento" class="custom-label"> Data de Nascimento 
+          <span style="color: #c00;">*</span>
+        </label>
+        <input type="date" id="data-nascimento" name="data-nascimento" required>
+
+        <label for="estado" class="custom-label">
+          <span data-i18n="estado">Estado</span> <span style="color: #c00;">*</span>
+        </label>
+        <select id="estado" name="estado" required>
+          <option value="" disabled selected data-i18n="selecione_estado">Selecione seu estado</option>
+          <option value="Paraiba" data-i18n="paraiba">Paraíba</option>
+          <option value="Minas Gerais" data-i18n="minas_gerais">Minas Gerais</option>
+          <option value="Rio Grande do Sul" data-i18n="rio_grande_do_sul">Rio Grande do Sul</option>
+          <option value="Exterior" data-i18n="exterior">Exterior</option>
+        </select>
+
+        <div id="cidade-container" style="display:none;">
+          <label for="cidade" class="custom-label">
+            <span data-i18n="cidade">Cidade</span> <span style="color: #c00;">*</span>
+          </label>
+          <select id="cidade" name="cidade" required>
+            <option value="" disabled selected data-i18n="selecione_cidade">Selecione sua cidade</option>
+          </select>
+        </div>
+
+        <input type="text" id="outra-cidade" name="outra-cidade" style="display:none; margin-top: 0.5em;">
+
+        <div id="exterior-container" style="display:none;">
+          <label for="pais" class="custom-label"> País 
+            <span style="color: #c00;">*</span> 
+          </label>
+          <select id="pais" name="pais" required>
+            <option value="" disabled selected>Selecione o país</option>
+            <option value="Estados Unidos da América">Estados Unidos da América</option>
+            <option value="Canadá">Canadá</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Outro País">Outro País</option>
+          </select>
+
+          <div id="estado-exterior-container" style="display:none;">
+            <label for="estado-exterior" class="custom-label"> Estado 
+              <span style="color: #c00;">*</span>
+            </label>
+            <select id="estado-exterior" name="estado-exterior" required>
+              <option value="" disabled selected>Selecione o estado</option>
+            </select>
+          </div>
+
+          <div id="cidade-exterior-container" style="display:none;">
+            <label for="cidade-exterior" class="custom-label"> Cidade 
+              <span style="color: #c00;">*</span>
+            </label>
+            <select id="cidade-exterior" name="cidade-exterior" required>
+              <option value="" disabled selected>Selecione a cidade</option>
+            </select>
+          </div>
+
+          <input type="text" id="outro-pais" name="outro-pais" style="display:none; margin-top: 0.5em;">
+          <input type="text" id="outro-estado" name="outro-estado" style="display:none; margin-top: 0.5em;">
+          <input type="text" id="outra-cidade-exterior" name="outra-cidade-exterior" style="display:none; margin-top: 0.5em;">
+        </div>
+
+        <label for="assunto" class="custom-label">
+          <span data-i18n="assunto">Assunto</span> <span style="color: #c00;">*</span>
+        </label>
         <select id="assunto" required>
           <option value="" disabled selected data-i18n="selecione_assunto">Selecione o assunto</option>
           <option value="parceria" data-i18n="fazer_parceria">Fazer Parceria</option>
@@ -52,10 +120,14 @@
           <option value="outro" data-i18n="outro_assunto">Outro Assunto</option>
         </select>
 
-        <input type="text" id="outro-assunto" placeholder="Digite o seu assunto" data-i18n-placeholder="digite_assunto" style="display:none;" />
+        <input type="text" id="outro-assunto" data-i18n-placeholder="digite_assunto" style="display:none;" />
 
-        <textarea placeholder="Digite a sua mensagem" data-i18n-placeholder="mensagem"></textarea>
+        <label for="mensagem" class="custom-label">
+          <span data-i18n="mensagem">Mensagem</span> <span style="color: #c00;">*</span>
+        </label>
+        <textarea data-i18n-placeholder="mensagem"></textarea>
         <button type="submit" data-i18n="enviar">Enviar</button>
+
       </form>
     </div>
 
@@ -125,7 +197,236 @@
     </div>
   </div>
   
-  <script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const estadoSelect = document.getElementById('estado');
+    const cidadeContainer = document.getElementById('cidade-container');
+    const cidadeSelect = document.getElementById('cidade');
+    const outraCidadeInput = document.getElementById('outra-cidade');
+
+    const exteriorContainer = document.getElementById('exterior-container');
+    const paisSelect = document.getElementById('pais');
+    const estadoExteriorContainer = document.getElementById('estado-exterior-container');
+    const estadoExteriorSelect = document.getElementById('estado-exterior');
+    const cidadeExteriorContainer = document.getElementById('cidade-exterior-container');
+    const cidadeExteriorSelect = document.getElementById('cidade-exterior');
+
+    const outroPaisInput = document.getElementById('outro-pais');
+    const outroEstadoInput = document.getElementById('outro-estado');
+    const outraCidadeExteriorInput = document.getElementById('outra-cidade-exterior');
+
+    const cidadesPorEstado = {
+      'Paraiba': ['João Pessoa', 'Campina Grande', 'Patos', 'Sousa', 'Cajazeiras', 'Outra Cidade'],
+      'Minas Gerais': ['Belo Horizonte', 'Uberlândia', 'Contagem', 'Juiz de Fora', 'Montes Claros', 'Outra Cidade'],
+      'Rio Grande do Sul': ['Porto Alegre', 'Caxias do Sul', 'Pelotas', 'Santa Maria', 'Passo Fundo', 'Outra Cidade']
+    };
+
+    const estadosPorPais = {
+      'Estados Unidos da América': {
+        'Califórnia': ['Los Angeles', 'San Francisco', 'San Diego'],
+        'Nova York': ['Nova York', 'Buffalo', 'Rochester'],
+        'Texas': ['Houston', 'Dallas', 'Austin']
+      },
+      'Canadá': {
+        'Ontário': ['Toronto', 'Ottawa', 'Hamilton'],
+        'Quebec': ['Montreal', 'Quebec City', 'Laval'],
+        'Colúmbia Britânica': ['Vancouver', 'Victoria', 'Richmond']
+      },
+      'Portugal': {
+        'Lisboa': ['Lisboa', 'Sintra', 'Cascais'],
+        'Porto': ['Porto', 'Vila Nova de Gaia', 'Matosinhos'],
+        'Coimbra': ['Coimbra', 'Figueira da Foz', 'Cantanhede']
+      }
+    };
+
+    function limparSelect(selectElem, textoPadrao) {
+      selectElem.innerHTML = '';
+      const optionPadrao = document.createElement('option');
+      optionPadrao.value = '';
+      optionPadrao.textContent = textoPadrao;
+      optionPadrao.disabled = true;
+      optionPadrao.selected = true;
+      selectElem.appendChild(optionPadrao);
+    }
+
+    estadoSelect.addEventListener('change', () => {
+      const estado = estadoSelect.value;
+
+      if (estado === 'Exterior') {
+        cidadeContainer.style.display = 'none';
+        limparSelect(cidadeSelect, 'Selecione sua cidade');
+        cidadeSelect.required = false;
+        outraCidadeInput.style.display = 'none';
+        outraCidadeInput.required = false;
+        outraCidadeInput.value = '';
+
+        exteriorContainer.style.display = 'block';
+        paisSelect.required = true;
+
+        limparSelect(estadoExteriorSelect, 'Selecione o estado');
+        estadoExteriorContainer.style.display = 'none';
+        estadoExteriorSelect.required = false;
+
+        limparSelect(cidadeExteriorSelect, 'Selecione a cidade');
+        cidadeExteriorContainer.style.display = 'none';
+        cidadeExteriorSelect.required = false;
+
+        outroPaisInput.style.display = 'none';
+        outroPaisInput.required = false;
+        outroPaisInput.value = '';
+        outroEstadoInput.style.display = 'none';
+        outroEstadoInput.required = false;
+        outroEstadoInput.value = '';
+        outraCidadeExteriorInput.style.display = 'none';
+        outraCidadeExteriorInput.required = false;
+        outraCidadeExteriorInput.value = '';
+
+      } else if (cidadesPorEstado[estado]) {
+        cidadeContainer.style.display = 'block';
+        limparSelect(cidadeSelect, 'Selecione sua cidade');
+        cidadesPorEstado[estado].forEach(cidade => {
+          const option = document.createElement('option');
+          option.value = cidade;
+          option.textContent = cidade;
+          cidadeSelect.appendChild(option);
+        });
+        cidadeSelect.required = true;
+
+        exteriorContainer.style.display = 'none';
+        paisSelect.required = false;
+
+        estadoExteriorContainer.style.display = 'none';
+        estadoExteriorSelect.required = false;
+
+        cidadeExteriorContainer.style.display = 'none';
+        cidadeExteriorSelect.required = false;
+
+        outraCidadeInput.style.display = 'none';
+        outraCidadeInput.required = false;
+        outraCidadeInput.value = '';
+
+        outroPaisInput.style.display = 'none';
+        outroPaisInput.required = false;
+        outroPaisInput.value = '';
+        outroEstadoInput.style.display = 'none';
+        outroEstadoInput.required = false;
+        outroEstadoInput.value = '';
+        outraCidadeExteriorInput.style.display = 'none';
+        outraCidadeExteriorInput.required = false;
+        outraCidadeExteriorInput.value = '';
+
+      } else {
+        cidadeContainer.style.display = 'none';
+        limparSelect(cidadeSelect, 'Selecione sua cidade');
+        cidadeSelect.required = false;
+        outraCidadeInput.style.display = 'none';
+        outraCidadeInput.required = false;
+        outraCidadeInput.value = '';
+
+        exteriorContainer.style.display = 'none';
+        paisSelect.required = false;
+
+        estadoExteriorContainer.style.display = 'none';
+        estadoExteriorSelect.required = false;
+
+        cidadeExteriorContainer.style.display = 'none';
+        cidadeExteriorSelect.required = false;
+
+        outroPaisInput.style.display = 'none';
+        outroPaisInput.required = false;
+        outroPaisInput.value = '';
+        outroEstadoInput.style.display = 'none';
+        outroEstadoInput.required = false;
+        outroEstadoInput.value = '';
+        outraCidadeExteriorInput.style.display = 'none';
+        outraCidadeExteriorInput.required = false;
+        outraCidadeExteriorInput.value = '';
+      }
+    });
+
+    cidadeSelect.addEventListener('change', () => {
+      if (cidadeSelect.value === 'Outra Cidade') {
+        outraCidadeInput.style.display = 'block';
+        outraCidadeInput.required = true;
+      } else {
+        outraCidadeInput.style.display = 'none';
+        outraCidadeInput.required = false;
+        outraCidadeInput.value = '';
+      }
+    });
+
+    paisSelect.addEventListener('change', () => {
+      const pais = paisSelect.value;
+
+      limparSelect(estadoExteriorSelect, 'Selecione o estado');
+      estadoExteriorContainer.style.display = 'none';
+      estadoExteriorSelect.required = false;
+
+      limparSelect(cidadeExteriorSelect, 'Selecione a cidade');
+      cidadeExteriorContainer.style.display = 'none';
+      cidadeExteriorSelect.required = false;
+
+      outroPaisInput.style.display = 'none';
+      outroPaisInput.required = false;
+      outroPaisInput.value = '';
+      outroEstadoInput.style.display = 'none';
+      outroEstadoInput.required = false;
+      outroEstadoInput.value = '';
+      outraCidadeExteriorInput.style.display = 'none';
+      outraCidadeExteriorInput.required = false;
+      outraCidadeExteriorInput.value = '';
+
+      if (pais === 'Outro País') {
+        outroPaisInput.style.display = 'block';
+        outroPaisInput.required = true;
+        outroEstadoInput.style.display = 'block';
+        outroEstadoInput.required = true;
+        outraCidadeExteriorInput.style.display = 'block';
+        outraCidadeExteriorInput.required = true;
+      } else if (estadosPorPais[pais]) {
+        Object.keys(estadosPorPais[pais]).forEach(estado => {
+          const option = document.createElement('option');
+          option.value = estado;
+          option.textContent = estado;
+          estadoExteriorSelect.appendChild(option);
+        });
+        estadoExteriorContainer.style.display = 'block';
+        estadoExteriorSelect.required = true;
+      }
+    });
+
+    estadoExteriorSelect.addEventListener('change', () => {
+      const pais = paisSelect.value;
+      const estado = estadoExteriorSelect.value;
+
+      limparSelect(cidadeExteriorSelect, 'Selecione a cidade');
+
+      if (estadosPorPais[pais] && estadosPorPais[pais][estado]) {
+        estadosPorPais[pais][estado].forEach(cidade => {
+          const option = document.createElement('option');
+          option.value = cidade;
+          option.textContent = cidade;
+          cidadeExteriorSelect.appendChild(option);
+        });
+        cidadeExteriorContainer.style.display = 'block';
+        cidadeExteriorSelect.required = true;
+      } else {
+        cidadeExteriorContainer.style.display = 'none';
+        cidadeExteriorSelect.required = false;
+      }
+    });
+
+    cidadeExteriorSelect.addEventListener('change', () => {
+      if (cidadeExteriorSelect.value === 'Outra Cidade') {
+        outraCidadeExteriorInput.style.display = 'block';
+        outraCidadeExteriorInput.required = true;
+      } else {
+        outraCidadeExteriorInput.style.display = 'none';
+        outraCidadeExteriorInput.required = false;
+        outraCidadeExteriorInput.value = '';
+      }
+    });
+
     const selectAssunto = document.getElementById('assunto');
     const outroAssuntoInput = document.getElementById('outro-assunto');
 
@@ -138,37 +439,9 @@
         outroAssuntoInput.removeAttribute('required');
       }
     });
+  });
+</script>
 
-    function translatePage(language) {
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if(translations[language][key]) {
-          el.textContent = translations[language][key];
-        }
-      });
-
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if(translations[language][key]) {
-          el.placeholder = translations[language][key];
-        }
-      });
-
-      const title = document.querySelector('title[data-i18n]');
-      if(title) {
-        const key = title.getAttribute('data-i18n');
-        if(translations[language][key]) {
-          title.textContent = translations[language][key];
-        }
-      }
-    }
-
-    document.getElementById('language-selector').addEventListener('change', (event) => {
-      translatePage(event.target.value);
-    });
-
-    translatePage('pt');
-  </script>
 
 </body>
 </html>
@@ -236,10 +509,6 @@
       outline-offset: 3px;
     }
 
-    .container {
-      padding: 50px 80px;
-    }
-
     .section {
       margin-bottom: 50px;
     }
@@ -259,7 +528,7 @@
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
-      gap: 50px;
+      gap: 100px;
       flex: 1;
     }
 
@@ -275,13 +544,14 @@
     .contact-form input,
     .contact-form textarea,
     .contact-form select {
-      width: 100%;
+      width: 500px;
       padding: 12px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 15px;
       font-family: 'Georgia', serif;
       font-size: 1.1rem;
+      box-sizing: border-box;
     }
 
     .contact-form textarea {
@@ -302,9 +572,25 @@
       background-color: #007a8a;
     }
 
+    .custom-label {
+      display: block;
+      font-family: 'Georgia', serif;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.4em;
+      color: #333333;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+
+    .custom-label:hover {
+      color: #0077cc;
+    }
+
     .contact-info {
       flex: 1;
-      margin-top: 5px;
+      margin-top: 7px;
     }
 
     .contact-info h3 {
