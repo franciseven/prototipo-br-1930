@@ -814,28 +814,32 @@
       max-height: 350px;
       overflow-y: auto;
       display: block;
+      border: 1px solid #ccc;
     }
 
     .tabela-container table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
-      font-size: 1.1rem;
-      max-height: 350px;
-      overflow-y: auto;
     }
 
     .tabela-container th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background-color: #f0f0f0;
       border: 1px solid #ccc;
       padding: 12px;
       text-align: center;
-      background-color: #f0f0f0;
     }
 
     .tabela-container td {
       border: 1px solid #ccc;
       padding: 12px;
       text-align: center;
+    }
+
+    .tabela-container table tr:last-child {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .checkbox-group {
@@ -1167,4 +1171,5 @@
       text-decoration: none;
     }
   </style>
+
 
