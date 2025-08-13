@@ -69,11 +69,6 @@
         </label>
         <input type="tel" id="telefone" name="telefone" placeholder="(DDD) 90000-0000" pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$">
 
-        <label for="fotoPerfil" class="custom-label">Foto de Perfil
-          <span style="font-weight: normal; font-style: italic;">(opcional)</span>
-        </label>
-        <input type="file" id="fotoPerfil" name="fotoPerfil" accept="image/*"><br>
-
         <label for="formacao" class="custom-label">
           <span data-i18n="formacao">Formação</span> <span style="color: #c00;">*</span>
         </label>
@@ -414,7 +409,7 @@
         if (!valido) return;
 
         if (form.checkValidity()) {
-          window.location.href = "../inicio_principais_telas/termos_uso.html";
+          window.location.href = "../inicio_principais_telas/foto_cadastro_usuario.html";
         } else {
           form.reportValidity();
         }
@@ -640,3 +635,4 @@
       text-decoration: none;
     }
   </style>
+
