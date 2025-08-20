@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BR 1930 - Código de Autenticação</title>
+</head>
+
+<body>
+
+  <header>
+
+    <a href="../inicio_principais_telas/index.html" style="display: flex; padding-left: 0px;">
+      <img src="../logo/logobr1930vetor.png" alt="Logo BR 1930" style="height: clamp(20px, 5vw, 45px);">
+    </a>
+
+    <nav>
+      <a href="./sobre.html" data-i18n="sobre">Sobre</a>
+      <a href="./politica_privacidade.html" data-i18n="politica">Política de Privacidade</a>
+      <a href="./instituicoes_parceiras.html" data-i18n="instituicoes">Instituições Parceiras</a>
+      <a href="./login.html" data-i18n="usuario">Usuário</a>
+      <a href="./contato.html" data-i18n="contato">Contato</a>
+      <a href="./manual.html" data-i18n="contato">Manual</a>
+			<div class="language-wrapper">
+				<select id="language-selector" class="language-selector">
+					<option value="pt">Português</option>
+					<option value="en">English</option>
+					<option value="es">Español</option>
+				</select>
+			</div>
+    </nav>
+    
+  </header>
+
+  <div class="auth-container">
+    <div class="auth-box">
+      <h2>Código de Autenticação</h2>
+      <p class="subtitle">Digite no campo abaixo o código enviado para o email <strong>fulano@gmail.com</strong></p>
+      <input type="text" placeholder="Digite seu código" class="code-input" id="auth-code"/>
+      <button class="btn-verify" id="verify-btn">Verificar</button>
+    </div>
+  </div>
+
+  <footer class="footer-section">
+    <p data-i18n="footer.database">Base de Dados - BR 1930</p>
+    <p data-i18n="footer.rights">Todos os Direitos Reservados</p>
+    <p data-i18n="footer.dspace">Feito com DSpace</p>
+  </footer>
+
+  <div class="footer-bottom">
+    <div class="left-logos">
+      <a href="https://paraiba.pb.gov.br/" target="_blank"><img src="../icones/governo_da_paraiba_logo.png" alt="Governo da Paraíba Logo"></a>
+      <a href="https://fcja.pb.gov.br/" target="_blank"><img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA Logo"></a>
+      <a href="https://fapesq.rpp.br/" target="_blank"><img src="../icones/fapesq_pb_logo.png" alt="Fapesq-pb Logo"></a>
+      <a href="https://www.ufpb.br/" target="_blank"><img src="../icones/ufpb__logo.png" alt="UFPB Logo"></a>
+      <a href="https://www.ifpb.edu.br/" target="_blank"><img src="../icones/ifpb_logo.png" alt="IFPB Logo"></a>
+      <a href="https://www.instagram.com/memorialpereiralima/" target="_blank"><img src="../icones/memorial_pereira_lima_logo.png" alt="Memorial Pereira Lima"></a>
+      <a href="https://codata.pb.gov.br/" target="_blank"><img src="../icones/codata_logo.png" alt="CODATA Logo"></a>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/projetobr1930/" target="_blank"><img src="../icones/instagram.png" alt="Instagram" style="height: 20px;"></a>
+      <a href="https://www.youtube.com/@projetobr1930" target="_blank"><img src="../icones/youtube.png" alt="YouTube" style="height: 20px; margin-left: 10px;"></a>
+    </div>
+  </div>
+
+	<script>
+		const verifyBtn = document.getElementById('verify-btn');
+		const authInput = document.getElementById('auth-code');
+
+		verifyBtn.addEventListener('click', () => {
+			const code = authInput.value.trim();
+			if (code === "123456") {
+				window.location.href = "./foto_cadastro_usuario.html";
+			} else {
+				alert("Código incorreto. Tente novamente.");
+				authInput.value = "";
+				authInput.focus();
+			}
+		});
+
+		authInput.addEventListener('keypress', (e) => {
+			if (e.key === "Enter") {
+				verifyBtn.click();
+			}
+		});
+	</script>
+
+</body>
+</html>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fc;
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 4vw;
+    background-color: #dfe3f3;
+    color: #2a2a2a;
+    border-bottom: 1px solid #cbd4ea;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5vw;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: clamp(0.95rem, 1vw, 1.1rem);
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  nav a:hover {
+    color: #5d8de3;
+  }
+
+  .language-wrapper {
+    position: relative;
+    display: inline-block;
+    min-width: 160px;
+  }
+
+  select#language-selector {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 6px 40px 6px 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+  }
+
+  select#language-selector:hover {
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+  }
+
+  select#language-selector:focus-visible {
+    outline: none;
+    border-color: #31c4f3;
+    box-shadow: 0 0 6px rgba(49, 196, 243, 0.5);
+  }
+
+  select#language-selector:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .language-wrapper::after {
+    content: "▼";
+    font-size: 0.8rem;
+    color: #555;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+	.auth-container {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 60px 20px;
+	}
+
+	.auth-box {
+		background-color: #fff;
+		padding: 40px 30px;
+		border-radius: 20px;
+		box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+		text-align: center;
+		max-width: 400px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		box-sizing: border-box;
+	}
+
+	.auth-box h2 {
+		color: #0d1b2a;
+		font-size: 1.8rem;
+		margin: 0;
+	}
+
+	.subtitle {
+		font-size: 1rem;
+		color: #555;
+		margin: 0;
+	}
+
+	.code-input {
+		width: 100%;
+		max-width: 100%;
+		padding: 12px 15px;
+		font-size: 1rem;
+		border: 2px solid #0d1b2a;
+		border-radius: 10px;
+		outline: none;
+		transition: border-color 0.3s, box-shadow 0.3s;
+	}
+
+	.code-input:focus {
+		border-color: #1e90ff;
+		box-shadow: 0 0 8px rgba(30, 144, 255, 0.4);
+	}
+
+	.btn-verify {
+		background-color: #1e90ff;
+		color: #fff;
+		padding: 12px 20px;
+		font-size: 1rem;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		width: 100%;
+		max-width: 100%;
+		transition: background-color 0.3s, transform 0.2s;
+	}
+
+	.btn-verify:hover {
+		background-color: #0d6efd;
+		transform: scale(1.03);
+	}
+
+	.footer-section {
+    background-color: #e4e7f5;
+    color: #2a2a2a;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .footer-section p {
+    margin: 6px 0;
+  }
+
+  .footer-bottom {
+    background-color: #e4e7f5;
+    color: #2a2a2a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    border-top: 1px solid #c3cadb;
+  }
+
+  .footer-bottom .left-logos img {
+    height: 38px;
+    margin-right: 15px;
+  }
+
+  .footer-section .footer-links a {
+    color: #2a2a2a;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    opacity: 0.7;
+  }
+
+  a > button {
+    text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  </style>
