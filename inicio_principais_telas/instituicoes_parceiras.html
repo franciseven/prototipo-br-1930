@@ -38,6 +38,15 @@
         <h2 data-i18n="instituicoes">Instituições Parceiras</h2>
       </div>
       <div class="partner-grid">
+
+        <a href="https://fcja.pb.gov.br/" target="_blank" style="text-decoration: none;">
+          <div class="partner-card">
+            <span class="partner-label" data-i18n="fcja_label">Centro Histórico, Artístico-Cultural e de Lazer</span>
+            <img src="../icones/fundacao_casa_de_jose_americo_logo-removebg-preview.png" alt="FCJA" />
+            <p data-i18n="fcja_nome">FUNDAÇÃO CASA DE JOSÉ AMÉRICO</p>
+          </div>
+        </a>
+        
         <a href="https://www.ifpb.edu.br/" target="_blank" style="text-decoration: none;">
           <div class="partner-card">
             <span class="partner-label" data-i18n="ifpb_label">Instituto Federal</span>
@@ -200,8 +209,9 @@
 
     .partner-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(5, 1fr);
+      row-gap: 100px;
+      column-gap: 20px;
       align-items: stretch;
     }
 
@@ -342,3 +352,4 @@
       text-decoration: none;
     }
   </style>
+
